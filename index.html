@@ -1,1 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Luxury Yacht Charters | Premium Dubai Marina & Palm Jumeirah Experiences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CUSTOMIZATION GUIDE =====
+        
+        HOW TO CHANGE CONTENT:
+        1. COMPANY INFO: Search for "YOUR INFO HERE" comments
+        2. YACHTS: Modify the yachts-grid section
+        3. DESTINATIONS: Update locations in destinations section
+        4. CONTACT: Update contact details in footer
+        
+        HOW TO CHANGE COLORS:
+        Primary color: #C19A6B (luxury gold)
+        Secondary color: #0A2463 (deep blue)
+        Background color: #F8F5F2 (light beige)
+        Text color: #333333
+        
+        ================================ */
+        
+        :root {
+            --primary: #C19A6B; /* Luxury gold - change for main buttons/accent */
+            --secondary: #0A2463; /* Deep blue - change for headings */
+            --accent: #B8860B; /* Darker gold for hover states */
+            --light: #F8F5F2; /* Light beige background */
+            --dark: #1A1A2E; /* Dark background */
+            --text: #333333; /* Main text color */
+            --text-light: #777777; /* Light text color */
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(193, 154, 107, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.9)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            color: var(--primary);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Yachts */
+        .yachts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .yacht-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .yacht-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .yacht-img {
+            height: 240px;
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .yacht-info {
+            padding: 25px;
+        }
+        
+        .yacht-info h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .yacht-location {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .yacht-features {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .yacht-features span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .yacht-features i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .yacht-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        /* Destinations */
+        .destinations {
+            background: var(--dark);
+            color: var(--white);
+        }
+        
+        .destinations .section-title h2 {
+            color: var(--white);
+        }
+        
+        .destinations .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .destination-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .destination-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .destination-info {
+            padding: 25px;
+        }
+        
+        .destination-info h3 {
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        
+        /* Testimonials */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid var(--primary);
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links a {
+                padding: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .yachts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-ship"></i>
+                    <span>Dubai</span>YachtCharters
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#yachts">Our Yachts</a>
+                    <a href="#destinations">Destinations</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#book" class="btn">Book Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Luxury Yacht Charters in <span class="highlight">Dubai</span></h1>
+            <p>Experience the ultimate luxury on Dubai's iconic waters. Charter premium yachts for Dubai Marina, Palm Jumeirah, and Burj Al Arab views. Unforgettable moments await.</p>
+            <a href="#yachts" class="btn">Explore Our Fleet</a>
+            <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--primary); margin-left: 15px;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Yachts Section -->
+    <section class="section" id="yachts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Luxury Yacht Fleet</h2>
+                <p>Choose from our exclusive selection of premium yachts available for charter in Dubai's most iconic locations</p>
+            </div>
+            
+            <div class="yachts-grid">
+                <!-- Yacht 1 - CHANGE THIS YACHT INFO -->
+                <div class="yacht-card">
+                    <div class="yacht-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="yacht-info">
+                        <div class="yacht-location">Dubai Marina</div>
+                        <h3>Majesty 135 Superyacht</h3>
+                        <p>Ultra-luxury superyacht perfect for corporate events, celebrations, and luxury cruising past Dubai's skyline.</p>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 12 Guests</span>
+                            <span><i class="fas fa-bed"></i> 5 Cabins</span>
+                            <span><i class="fas fa-ruler"></i> 135 ft</span>
+                            <span><i class="fas fa-water"></i> Jacuzzi</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div class="price">AED 15,000 <span>/ day</span></div>
+                            <a href="#contact" class="btn">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+               <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yacht Photo Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #0A2463;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        
+        .yacht-info {
+            background: #0A2463;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .yacht-info h2 {
+            margin-bottom: 10px;
+        }
+        
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .photo-item {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: block;
+        }
+        
+        .photo-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .back-button {
+            display: block;
+            width: 200px;
+            margin: 40px auto 0;
+            padding: 12px;
+            background: #C19A6B;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background: #B8860B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Luxury Yacht Gallery</h1>
+        
+        <div class="yacht-info">
+            <h2>Majesty 48</h2>
+            <p>📍 Dubai Marina | 🛌 5 Cabins | 👥 12 Guests | 📏 48 ft</p>
+            <p>💰 Price: AED 300 per day</p>
+        </div>
+        
+        <div class="photo-gallery">
+            <!-- PHOTO 1 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0014.jpg" alt="Yacht Front View">
+                <div class="photo-caption">Front view of the Majesty 135 Superyacht</div>
+            </div>
+            
+            <!-- PHOTO 2 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0010.jpg" alt="Yacht Interior">
+                <div class="photo-caption">Luxury interior with modern design</div>
+            </div>
+            
+            <!-- PHOTO 3 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0008.jpg" alt="Yacht Deck">
+                <div class="photo-caption">Spacious deck area for entertaining</div>
+            </div>
+            
+            <!-- PHOTO 4 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0006.jpg" alt="Yacht Jacuzzi">
+                <div class="photo-caption">Private jacuzzi on the upper deck</div>
+            </div>
+            
+            <!-- PHOTO 5 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0005.jpg" alt="Yacht Master Cabin">
+                <div class="photo-caption">Master cabin with panoramic windows</div>
+            </div>
+            
+            <!-- PHOTO 6 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0004.jpg" alt="Yacht Kitchen">
+                <div class="photo-caption">Fully equipped gourmet kitchen</div>
+            </div>
+          
+            <!-- PHOTO 7 - CHANGE THIS -->
+            <div class="photo-item">
+                <img src="IMG-20251230-WA0018.jpg" alt="Yacht Front View">
+                <div class="photo-caption">Front view of the Majesty 135 Superyacht</div>
+            </div>
+        </div>
+        
+        <a href="#" class="back-button">Back to All Yachts</a>
+    </div>
+</body>
+</html>
+
+                
+                <!-- Yacht 3 - CHANGE THIS YACHT INFO -->
+                <div class="yacht-card">
+                    <div class="yacht-img" style="background-image: url('https://images.unsplash.com/photo-1516815231560-8f41ec528527?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="yacht-info">
+                        <div class="yacht-location">Burj Al Arab</div>
+                        <h3>Princess 68 Flybridge</h3>
+                        <p>Spacious flybridge yacht perfect for family outings and romantic sunset cruises with Burj Al Arab views.</p>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 15 Guests</span>
+                            <span><i class="fas fa-bed"></i> 3 Cabins</span>
+                            <span><i class="fas fa-ruler"></i> 68 ft</span>
+                            <span><i class="fas fa-utensils"></i> Full Kitchen</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div class="price">AED 7,200 <span>/ day</span></div>
+                            <a href="#contact" class="btn">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="section destinations" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dubai's Iconic Destinations</h2>
+                <p>Explore Dubai's most famous landmarks from the comfort of your private yacht</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <!-- Destination 1 - CHANGE THIS DESTINATION INFO -->
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="destination-info">
+                        <h3>Dubai Marina</h3>
+                        <p>Cruise through the world's largest man-made marina, surrounded by stunning skyscrapers and vibrant waterfront dining.</p>
+                        <p><strong>Starting from:</strong> AED 3,500 / 4 hours</p>
+                    </div>
+                </div>
+                
+                <!-- Destination 2 - CHANGE THIS DESTINATION INFO -->
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1541435469116-6ce8d5e6b7ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="destination-info">
+                        <h3>Palm Jumeirah</h3>
+                        <p>Navigate around the iconic Palm Jumeirah island, viewing luxurious waterfront villas and Atlantis The Palm.</p>
+                        <p><strong>Starting from:</strong> AED 4,200 / 4 hours</p>
+                    </div>
+                </div>
+                
+                <!-- Destination 3 - CHANGE THIS DESTINATION INFO -->
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="destination-info">
+                        <h3>Burj Al Arab View</h3>
+                        <p>Get up close to the iconic sail-shaped hotel, perfect for photography and experiencing Dubai's luxury hospitality.</p>
+                        <p><strong>Starting from:</strong> AED 3,800 / 4 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Guest Experiences</h2>
+                <p>What our clients say about their luxury yacht experiences in Dubai</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Our sunset cruise around Palm Jumeirah was absolutely breathtaking. The crew was professional, the yacht was immaculate, and the views were unforgettable. Highly recommend!"
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <div>
+                            <div class="client-name">Ahmed Al-Mansoori</div>
+                            <div>Corporate Event, November 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your Luxury Experience</h2>
+                <p>Contact us to charter a yacht for your special occasion in Dubai</p>
+            </div>
+            
+            <div class="contact-form">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+971 50 XXX XXXX" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="yachtInterest">Yacht Interest</label>
+                        <select id="yachtInterest" class="form-control">
+                            <option value="">Select a yacht</option>
+                            <option value="majesty135">Majesty 135 Superyacht</option>
+                            <option value="sunseeker75">Sunseeker 75</option>
+                            <option value="princess68">Princess 68 Flybridge</option>
+                            <option value="notsure">Not sure - need advice</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your occasion, number of guests, and any special requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Send Booking Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info - CHANGE THIS SECTION -->
+                <div class="footer-column">
+                    <h3>Dubai Yacht Charters</h3>
+                    <p>Providing luxury yacht experiences in Dubai since 2010. Premium service, unforgettable voyages, and exceptional hospitality.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info - CHANGE THIS SECTION -->
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Dubai Marina, Dubai, UAE</p>
+                    <p><i class="fas fa-phone"></i> +971 4 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@dubaiyachtcharters.ae</p>
+                    <p><i class="fas fa-clock"></i> 9:00 AM - 10:00 PM Daily</p>
+                </div>
+                
+                <!-- Quick Links - CHANGE THIS SECTION -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#yachts">Our Yachts</a>
+                    <a href="#destinations">Destinations</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                
+                <!-- Popular Destinations - CHANGE THIS SECTION -->
+                <div class="footer-column">
+                    <h3>Popular Charters</h3>
+                    <a href="#">Dubai Marina Cruise</a>
+                    <a href="#">Palm Jumeirah Tour</a>
+                    <a href="#">Burj Al Arab Viewing</a>
+                    <a href="#">Sunset Dinner Cruise</a>
+                    <a href="#">Corporate Events</a>
+                    <a href="#">Wedding Charters</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Dubai Yacht Charters. All rights reserved. | Luxury yacht charters in Dubai Marina, Palm Jumeirah & Burj Al Arab</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        const bookingForm = document.getElementById('bookingForm');
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                yacht: document.getElementById('yachtInterest').value,
+                date: document.getElementById('date').value,
+                message: document.getElementById('message').value
+            };
+            
+            // In a real implementation, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you ${formData.name}! Your yacht charter inquiry has been received. We will contact you at ${formData.email} or ${formData.phone} within 24 hours.`);
+            
+            // Reset form
+            bookingForm.reset();
+        });
+        
+        // Set minimum date to today for date picker
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.padding = '15px 0';
+            }
+        });
+    </script>
+</body>
+</html>
