@@ -121,6 +121,35 @@
             .yacht-price { flex-direction: column; align-items: flex-start; gap: 20px; }
         }
     </style>
+    /* ====== YACHT SLIDESHOW STYLES ====== */
+.yacht-slideshow {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideShow 16s infinite;
+}
+
+.slide-1 { animation-delay: 0s; }
+.slide-2 { animation-delay: 4s; }
+.slide-3 { animation-delay: 8s; }
+.slide-4 { animation-delay: 12s; }
+
+@keyframes slideShow {
+    0%, 20% { opacity: 1; }
+    25%, 100% { opacity: 0; }
+}
+
 </head>
 <body>
     <!-- ========== HEADER & NAVIGATION ========== -->
@@ -160,26 +189,32 @@
             <div class="yacht-gallery">
                 <!-- ===== YACHT 1 - EDIT ALL DETAILS BELOW ===== -->
                 <div class="yacht-card">
-                    <!-- REPLACE THIS URL WITH YOUR FIRST YACHT PHOTO -->
-                    <div class="yacht-img" style="background-image: url('PATH_TO_YOUR_YACHT1_PHOTO.jpg');"></div>
+                    <!-- REPLACE THIS URL WITH YOUR FIRST YACHT PHOTO --
+                    <!-- YACHT SLIDESHOW START -->
+<div class="yacht-slideshow">
+    <div class="slide slide-1" style="background-image: url('majestry 2.jpg');"></div>
+    <div class="slide slide-2" style="background-image: url('majestry 3.jpg');"></div>
+    <div class="slide slide-3" style="background-image: url('majestry 4.jpg');"></div>
+    <div class="slide slide-4" style="background-image: url('majestry 6.jpg');"></div>
+</div>
+<!-- YACHT SLIDESHOW END -->
                     <div class="yacht-info">
-                        <h3>YACHT 1 NAME HERE</h3> <!-- e.g., "Majesty 135" -->
+                        <h3>YACHT 1 NAME HERE</h3> <!-- e.g., "Majesty 48" -->
                         <p>DESCRIBE YOUR FIRST YACHT HERE. Talk about its luxury features, ideal for events, cruising comfort, etc.</p>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> X Guests</span>
-                            <span><i class="fas fa-bed"></i> X Cabins</span>
-                            <span><i class="fas fa-ruler-combined"></i> XX ft</span>
-                            <span><i class="fas fa-water"></i> Jacuzzi & Sun Deck</span>
-                        </div>
+                            <span><i class="fas fa-users"></i> 13 Guests</span>
+                            <span><i class="fas fa-bed"></i> 2 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 50ft</span>
+                          </div>
                         <div class="yacht-price">
-                            <div class="price-tag">AED X,XXX <span style="font-size:1rem; font-weight:normal;">/ day</span></div>
+                            <div class="price-tag">AED 700<span style="font-size:1rem; font-weight:normal;">/ day</span></div>
                             <div class="enquiry-buttons">
                                 <!-- REPLACE THE 'href' VALUE WITH YOUR ACTUAL WHATSAPP NUMBER -->
-                                <a href="https://wa.me/971XXXXXXXXX?text=Hi! I'm interested in YACHT 1 NAME" class="btn-whatsapp" target="_blank">
+                                <a href="https://wa.me/+919894016934 text=Hi! I'm interested in majestry 50" class="btn-whatsapp" target="_blank">
                                     <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                                 <!-- REPLACE THE 'href' VALUE WITH YOUR ACTUAL TELEGRAM USERNAME -->
-                                <a href="https://t.me/YourTelegramUsername" class="btn-telegram" target="_blank">
+                                <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
                                     <i class="fab fa-telegram"></i> Telegram
                                 </a>
                             </div>
@@ -190,9 +225,17 @@
                 <!-- ===== YACHT 2 - EDIT ALL DETAILS BELOW ===== -->
                 <div class="yacht-card">
                     <!-- REPLACE THIS URL WITH YOUR SECOND YACHT PHOTO -->
-                    <div class="yacht-img" style="background-image: url('PATH_TO_YOUR_YACHT2_PHOTO.jpg');"></div>
+                   <!-- YACHT SLIDESHOW START -->
+<div class="yacht-slideshow">
+    <div class="slide slide-1" style="background-image: url('yacht 11.jpg');"></div>
+    <div class="slide slide-2" style="background-image: url('yacht 11.jpg');"></div>
+    <div class="slide slide-3" style="background-image: url('yacht 14.jpg');"></div>
+    <div class="slide slide-4" style="background-image: url('yacht 15.jpg');"></div>
+</div>
+<!-- YACHT SLIDESHOW END -->
+
                     <div class="yacht-info">
-                        <h3>YACHT 2 NAME HERE</h3>
+                        <h3>silvar craft</h3>
                         <p>DESCRIBE YOUR SECOND YACHT HERE.</p>
                         <div class="yacht-features">
                             <span><i class="fas fa-users"></i> X Guests</span>
@@ -203,7 +246,7 @@
                         <div class="yacht-price">
                             <div class="price-tag">AED X,XXX <span style="font-size:1rem; font-weight:normal;">/ day</span></div>
                             <div class="enquiry-buttons">
-                                <a href="https://wa.me/971XXXXXXXXX?text=Hi! I'm interested in YACHT 2 NAME" class="btn-whatsapp" target="_blank">
+                                <a href="https://wa.me/+919894016934text=Hi! I'm interested in silvar craft" class="btn-whatsapp" target="_blank">
                                     <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                                 <a href="https://t.me/YourTelegramUsername" class="btn-telegram" target="_blank">
