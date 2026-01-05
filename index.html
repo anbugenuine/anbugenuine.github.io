@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        /* ==== CUSTOMIZATION NOTES - READ ME FIRST ====
-        HOW TO USE THIS TEMPLATE:
-        1. VIDEO: Replace video URL with your own video file
-        2. PHOTOS: Replace placeholder image URLs with your own photos
-        3. TEXT: Find and edit all text marked with comments
-        4. CONTACT: Update WhatsApp/Telegram numbers and email
-        =============================================== */
-
         :root {
             --primary: #C19A6B; /* Main Gold Color */
             --secondary: #0A2463; /* Deep Blue */
@@ -60,7 +52,7 @@
             margin-top: 0;
             overflow: hidden;
         }
-        
+       
         .video-background {
             position: absolute;
             top: 0;
@@ -70,7 +62,7 @@
             object-fit: cover;
             z-index: -2;
         }
-        
+       
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -80,21 +72,21 @@
             background: rgba(26, 26, 46, 0.7);
             z-index: -1;
         }
-        
+       
         .hero-content {
             max-width: 800px;
             padding: 20px;
             z-index: 1;
             margin-top: 60px;
         }
-        
+       
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
-        
+       
         .hero p {
             font-size: 1.3rem;
             margin: 0 auto 2.5rem;
@@ -102,7 +94,7 @@
             max-width: 700px;
             text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
-        
+       
         .cta-button {
             background: var(--primary);
             color: var(--dark);
@@ -114,7 +106,7 @@
             margin: 0 10px;
             transition: all 0.3s ease;
         }
-        
+       
         .cta-button:hover {
             background: var(--accent);
             transform: translateY(-3px);
@@ -137,7 +129,7 @@
             transition: transform 0.3s ease;
         }
         .yacht-card:hover { transform: translateY(-10px); }
-        
+       
         /* Yacht Slideshow Styles - FIXED */
         .yacht-slideshow {
             width: 100%;
@@ -154,42 +146,33 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
+            animation-duration: 24s;
+            animation-iteration-count: infinite;
         }
 
-        /* Yacht 1 - 6 photos (24 second cycle) */
-        .yacht-slideshow:nth-child(1) .slide {
-            animation: slideShow6 24s infinite;
+        /* Slideshow timing - FIXED */
+        .yacht-card:first-child .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow1; animation-delay: 0s; }
+        .yacht-card:first-child .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow1; animation-delay: 4s; }
+        .yacht-card:first-child .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow1; animation-delay: 8s; }
+        .yacht-card:first-child .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow1; animation-delay: 12s; }
+        .yacht-card:first-child .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow1; animation-delay: 16s; }
+        .yacht-card:first-child .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow1; animation-delay: 20s; }
+
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow2; animation-delay: 0s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow2; animation-delay: 4s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow2; animation-delay: 8s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow2; animation-delay: 12s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow2; animation-delay: 16s; }
+
+        /* Animations - FIXED */
+        @keyframes slideShow1 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
         }
 
-        /* Timing for 6 photos */
-        .yacht-slideshow:nth-child(1) .slide:nth-child(1) { animation-delay: 0s; }
-        .yacht-slideshow:nth-child(1) .slide:nth-child(2) { animation-delay: 4s; }
-        .yacht-slideshow:nth-child(1) .slide:nth-child(3) { animation-delay: 8s; }
-        .yacht-slideshow:nth-child(1) .slide:nth-child(4) { animation-delay: 12s; }
-        .yacht-slideshow:nth-child(1) .slide:nth-child(5) { animation-delay: 16s; }
-        .yacht-slideshow:nth-child(1) .slide:nth-child(6) { animation-delay: 20s; }
-
-        /* Yacht 2 - 5 photos (20 second cycle) */
-        .yacht-slideshow:nth-child(2) .slide {
-            animation: slideShow5 20s infinite;
-        }
-
-        /* Timing for 5 photos */
-        .yacht-slideshow:nth-child(2) .slide:nth-child(1) { animation-delay: 0s; }
-        .yacht-slideshow:nth-child(2) .slide:nth-child(2) { animation-delay: 4s; }
-        .yacht-slideshow:nth-child(2) .slide:nth-child(3) { animation-delay: 8s; }
-        .yacht-slideshow:nth-child(2) .slide:nth-child(4) { animation-delay: 12s; }
-        .yacht-slideshow:nth-child(2) .slide:nth-child(5) { animation-delay: 16s; }
-
-        /* Animations */
-        @keyframes slideShow6 {
-            0%, 16.67% { opacity: 1; } /* Each photo shows for 16.67% of 24s = 4s */
-            20%, 100% { opacity: 0; } /* Small gap between transitions */
-        }
-
-        @keyframes slideShow5 {
-            0%, 20% { opacity: 1; } /* Each photo shows for 20% of 20s = 4s */
-            25%, 100% { opacity: 0; } /* Small gap between transitions */
+        @keyframes slideShow2 {
+            0%, 20% { opacity: 1; }
+            25%, 100% { opacity: 0; }
         }
 
         .yacht-info { padding: 30px; }
@@ -203,6 +186,7 @@
         .yacht-features span { display: flex; align-items: center; gap: 8px; }
         .yacht-price { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
         .price-tag { font-size: 1.8rem; font-weight: 700; color: var(--secondary); }
+        .price-note { font-size: 0.9rem; color: #666; margin-top: 5px; }
         .enquiry-buttons { display: flex; gap: 15px; }
         .btn-whatsapp, .btn-telegram {
             padding: 12px 25px; border-radius: 4px;
@@ -369,23 +353,22 @@
     <!-- ========== HERO SECTION WITH VIDEO ========== -->
     <section class="hero" id="home">
         <!-- Background Video -->
-        <!-- REPLACE THIS VIDEO URL WITH YOUR OWN YACHT VIDEO -->
         <video autoplay muted loop playsinline class="video-background">
             <source src="yacht videos.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
-        
+       
         <div class="hero-content">
             <h1 data-en="Experience Dubai from the Water" data-ar="استمتع بدبي من على الماء">
                 Experience Dubai from the Water
             </h1>
-            <p data-en="Charter our exclusive luxury yachts for an unforgettable journey past Dubai Marina, Palm Jumeirah, and the iconic Burj Al Arab." 
+            <p data-en="Charter our exclusive luxury yachts for an unforgettable journey past Dubai Marina, Palm Jumeirah, and the iconic Burj Al Arab."
                data-ar="استأجر يخوتنا الفاخرة الحصرية لرحلة لا تُنسى حول مارينا دبي، نخلة جميرا، وبرج العرب الرمزي.">
                 Charter our exclusive luxury yachts for an unforgettable journey past Dubai Marina, Palm Jumeirah, and the iconic Burj Al Arab.
             </p>
             <a href="#yachts" class="cta-button" data-en="View Our Fleet" data-ar="عرض أسطولنا">View Our Fleet</a>
-            <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary);" 
+            <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary);"
                data-en="Instant Enquiry" data-ar="استفسار فوري">Instant Enquiry</a>
         </div>
     </section>
@@ -395,7 +378,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 data-en="Our Premium Yacht Fleet" data-ar="أسطولنا الفاخر من اليخوت">Our Premium Yacht Fleet</h2>
-                <p data-en="Start with our two finest vessels. More to be added soon." 
+                <p data-en="Start with our two finest vessels. More to be added soon."
                    data-ar="نبدأ بيختين من أفضل ما لدينا. المزيد قريباً.">
                     Start with our two finest vessels. More to be added soon.
                 </p>
@@ -406,20 +389,18 @@
                 <div class="yacht-card">
                     <!-- Yacht 1 Slideshow (6 Photos) -->
                     <div class="yacht-slideshow">
-                        <!-- REPLACE THESE PHOTOS WITH YOUR ACTUAL YACHT 1 PHOTOS -->
                         <div class="slide" style="background-image: url('majestry 8.jpg');"></div>
                         <div class="slide" style="background-image: url('majestry 11.jpg');"></div>
                         <div class="slide" style="background-image: url('majestry 3.jpg');"></div>
                         <div class="slide" style="background-image: url('majestry 12.jpg');"></div>
-                        <!-- Add 2 more photos for yacht 1 (total 6) -->
                         <div class="slide" style="background-image: url('majestry 5.jpg');"></div>
                         <div class="slide" style="background-image: url('majestry 1.jpg');"></div>
                     </div>
-                    
+                   
                     <div class="yacht-info">
                         <div class="yacht-location" data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</div>
-                        <h3 data-en="Majesty 50" data-ar="ماجستي ٤٨">Majesty 50</h3>
-                        <p data-en="Luxury yacht perfect for family trips and corporate events. Features spacious deck, modern interior, and professional crew." 
+                        <h3 data-en="Majesty 50" data-ar="ماجستي ٥٠">Majesty 50</h3>
+                        <p data-en="Luxury yacht perfect for family trips and corporate events. Features spacious deck, modern interior, and professional crew."
                            data-ar="يخت فاخر مثالي للرحلات العائلية والفعاليات التجارية. يتميز بسطح فسيح وداخلية حديثة وطاقم محترف.">
                             Luxury yacht perfect for family trips and corporate events. Features spacious deck, modern interior, and professional crew.
                         </p>
@@ -427,12 +408,11 @@
                             <span><i class="fas fa-users"></i> <span data-en="13 Guests" data-ar="١٣ ضيف">13 Guests</span></span>
                             <span><i class="fas fa-bed"></i> <span data-en="2 Cabins" data-ar="٢ غرفة">2 Cabins</span></span>
                             <span><i class="fas fa-ruler-combined"></i> <span data-en="50 ft" data-ar="٥٠ قدم">50 ft</span></span>
-                           </div>
+                        </div>
                         <div class="yacht-price">
-                            <div class="price-tag">AED 700 <span style="font-size:1rem; font-weight:normal;" data-en="/ day" data-ar="/ يوم">/ day</span></div>
+                            <div class="price-tag">AED 700 <span style="font-size:1rem; font-weight:normal;" data-en="/ hour" data-ar="/ ساعة">/ hour</span></div>
                             <div class="enquiry-buttons">
-                                <!-- FIXED WhatsApp Link -->
-                                <a href="https://wa.me/919894016934?text=Hi! I'm interested in Majesty 50 yacht in Dubai" class="btn-whatsapp" target="_blank">
+                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Majesty 50 yacht in Dubai" class="btn-whatsapp" target="_blank">
                                     <i class="fab fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
@@ -447,33 +427,30 @@
                 <div class="yacht-card">
                     <!-- Yacht 2 Slideshow (5 Photos) -->
                     <div class="yacht-slideshow">
-                        <!-- REPLACE THESE PHOTOS WITH YOUR ACTUAL YACHT 2 PHOTOS -->
                         <div class="slide" style="background-image: url('yacht 11.jpg');"></div>
                         <div class="slide" style="background-image: url('yacht 12.jpg');"></div>
                         <div class="slide" style="background-image: url('yacht 13.jpg');"></div>
                         <div class="slide" style="background-image: url('yacht 14.jpg');"></div>
                         <div class="slide" style="background-image: url('yacht 15.jpg');"></div>
-                        <!-- Yacht 2 has 5 photos total -->
                     </div>
-                    
+                   
                     <div class="yacht-info">
-                        <div class="dubai merina" data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</div>
-                        <h3 data-en="Silver Craft 40" data-ar="سيلفر كرافت ٥٥">Silver Craft 40</h3>
-                        <p data-en="Modern yacht with sleek design, perfect for romantic sunset cruises and small gatherings. Features sun deck and entertainment system." 
+                        <div class="yacht-location" data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</div>
+                        <h3 data-en="Silver Craft 40" data-ar="سيلفر كرافت ٤٠">Silver Craft 40</h3>
+                        <p data-en="Modern yacht with sleek design, perfect for romantic sunset cruises and small gatherings. Features sun deck and entertainment system."
                            data-ar="يخت حديث بتصميم أنيق، مثالي للرحلات الرومانسية والتجمعات الصغيرة. يتميز بسطح للشمس ونظام ترفيه.">
                             Modern yacht with sleek design, perfect for romantic sunset cruises and small gatherings. Features sun deck and entertainment system.
                         </p>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> <span data-en="8 Guests" data-ar="١٠ ضيوف">0 Guests</span></span>
+                            <span><i class="fas fa-users"></i> <span data-en="8 Guests" data-ar="٨ ضيوف">8 Guests</span></span>
                             <span><i class="fas fa-bed"></i> <span data-en="3 Cabins" data-ar="٣ غرف">3 Cabins</span></span>
-                            <span><i class="fas fa-ruler-combined"></i> <span data-en="55 ft" data-ar="٥٥ قدم">55 ft</span></span>
+                            <span><i class="fas fa-ruler-combined"></i> <span data-en="40 ft" data-ar="٤٠ قدم">40 ft</span></span>
                             <span><i class="fas fa-swimming-pool"></i> <span data-en="Swim Platform" data-ar="منصة سباحة">Swim Platform</span></span>
                         </div>
                         <div class="yacht-price">
-                            <div class="price-tag">AED 500 <span style="font-size:1rem; font-weight:normal;" data-en="/ day" data-ar="/ يوم">/ day</span></div>
+                            <div class="price-tag">AED 500 <span style="font-size:1rem; font-weight:normal;" data-en="/ hour" data-ar="/ ساعة">/ hour</span></div>
                             <div class="enquiry-buttons">
-                                <!-- FIXED WhatsApp Link -->
-                                <a href="https://wa.me/919894016934?text=Hi! I'm interested in Silver Craft 55 yacht in Dubai" class="btn-whatsapp" target="_blank">
+                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Silver Craft 40 yacht in Dubai" class="btn-whatsapp" target="_blank">
                                     <i class="fab fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
@@ -492,7 +469,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 data-en="Guest Reviews" data-ar="تعليقات العملاء">Guest Reviews</h2>
-                <p data-en="See what our clients say about their experience." 
+                <p data-en="See what our clients say about their experience."
                    data-ar="شاهد ما يقوله عملاؤنا عن تجربتهم.">
                     See what our clients say about their experience.
                 </p>
@@ -518,7 +495,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
-                <p data-en="Get in touch to plan your perfect yacht day." 
+                <p data-en="Get in touch to plan your perfect yacht day."
                    data-ar="اتصل بنا لتنظيم يوم اليخت المثالي.">
                     Get in touch to plan your perfect yacht day.
                 </p>
@@ -535,18 +512,18 @@
                     </div>
                     <div class="form-group">
                         <label for="message" data-en="Your Enquiry *" data-ar="استفسارك *">Your Enquiry *</label>
-                        <textarea id="message" class="form-control" required 
+                        <textarea id="message" class="form-control" required
                                   data-placeholder-en="Please mention your preferred yacht, date, and number of guests..."
                                   data-placeholder-ar="يرجى ذكر اليخت المفضل، التاريخ، وعدد الضيوف..."></textarea>
                     </div>
                     <p style="margin-bottom: 20px; font-size: 0.9rem;">
-                        <strong data-en="Prefer direct chat?" data-ar="تفضل المحادثة المباشرة؟">Prefer direct chat?</strong> 
-                        <span data-en="Use the WhatsApp or Telegram buttons above for instant response." 
+                        <strong data-en="Prefer direct chat?" data-ar="تفضل المحادثة المباشرة؟">Prefer direct chat?</strong>
+                        <span data-en="Use the WhatsApp or Telegram buttons above for instant response."
                               data-ar="استخدم أزرار الواتساب أو تلغرام أعلاه للرد الفوري.">
                             Use the WhatsApp or Telegram buttons above for instant response.
                         </span>
                     </p>
-                    <button type="submit" class="cta-button" style="width: 100%;" 
+                    <button type="submit" class="cta-button" style="width: 100%;"
                             data-en="Send Enquiry" data-ar="إرسال الاستفسار">Send Enquiry</button>
                 </form>
             </div>
@@ -558,7 +535,7 @@
         <div class="footer-grid">
             <div class="footer-column">
                 <h3 data-en="Ocean Charters Dubai" data-ar="أوشن تشارترز دبي">Ocean Charters Dubai</h3>
-                <p data-en="Providing luxury yacht charter experiences in Dubai since 2023. Safety, professionalism, and unforgettable memories." 
+                <p data-en="Providing luxury yacht charter experiences in Dubai since 2023. Safety, professionalism, and unforgettable memories."
                    data-ar="نقدم تجارب تأجير يخوت فاخرة في دبي منذ ٢٠٢٣. سلامة، احترافية، وذكريات لا تنسى.">
                     Providing luxury yacht charter experiences in Dubai since 2023. Safety, professionalism, and unforgettable memories.
                 </p>
@@ -570,8 +547,9 @@
             </div>
             <div class="footer-column">
                 <h3 data-en="Quick Contact" data-ar="اتصال سريع">Quick Contact</h3>
-                <p><i class="fas fa-phone"></i> +971 4 123 4567</p>
-                <p><i class="fas fa-envelope"></i> info@oceanchartersdubai.ae</p>
+                <!-- CHANGED PHONE NUMBER AND EMAIL -->
+                <p><i class="fas fa-phone"></i> +971 52 787 2669</p>
+                <p><i class="fas fa-envelope"></i> bookinghubdubai@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> <span data-en="Dubai Marina, Dubai, UAE" data-ar="مارينا دبي، دبي، الإمارات">Dubai Marina, Dubai, UAE</span></p>
             </div>
             <div class="footer-column">
@@ -582,7 +560,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; <span id="currentYear"></span> <span data-en="Ocean Charters Dubai. All rights reserved." 
+            <p>&copy; <span id="currentYear"></span> <span data-en="Ocean Charters Dubai. All rights reserved."
                    data-ar="أوشن تشارترز دبي. جميع الحقوق محفوظة.">Ocean Charters Dubai. All rights reserved.</span></p>
         </div>
     </footer>
@@ -605,14 +583,14 @@
 
         // Enhanced Language Toggle System
         let currentLanguage = 'en';
-        
+       
         function toggleLanguage() {
             const newLang = currentLanguage === 'en' ? 'ar' : 'en';
             currentLanguage = newLang;
-            
+           
             // Update HTML lang attribute
             document.documentElement.lang = newLang;
-            
+           
             // Update all elements with data-en and data-ar attributes
             document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
                 if(element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
@@ -626,11 +604,11 @@
                     element.textContent = element.getAttribute('data-' + newLang);
                 }
             });
-            
+           
             // Update language toggle button text
             const toggleBtn = document.querySelector('.lang-toggle');
             toggleBtn.textContent = newLang === 'en' ? 'عربي' : 'English';
-            
+           
             // Update direction for RTL languages
             if(newLang === 'ar') {
                 document.body.style.direction = 'rtl';
@@ -639,7 +617,7 @@
                 document.body.style.direction = 'ltr';
                 document.body.classList.remove('rtl');
             }
-            
+           
             // Force slideshow restart (fix for RTL layout)
             const slideshows = document.querySelectorAll('.yacht-slideshow');
             slideshows.forEach(slideshow => {
@@ -654,7 +632,7 @@
 
         // Initialize with English
         document.documentElement.lang = 'en';
-        
+       
         // Video fallback for unsupported browsers
         const video = document.querySelector('.video-background');
         if(video && !video.canPlayType) {
@@ -673,6 +651,18 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Start slideshows when page loads
+        window.addEventListener('load', function() {
+            const slideshows = document.querySelectorAll('.yacht-slideshow');
+            slideshows.forEach(slideshow => {
+                const slides = slideshow.querySelectorAll('.slide');
+                slides.forEach((slide, index) => {
+                    // Force animation to start
+                    slide.style.animationPlayState = 'running';
+                });
             });
         });
     </script>
