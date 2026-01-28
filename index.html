@@ -37,7 +37,6 @@
         .logo span { color: var(--primary); }
         .nav-links a { color: var(--white); text-decoration: none; margin-left: 2rem; font-weight: 500; }
         .nav-links a:hover { color: var(--primary); }
-        .lang-toggle { margin-left: 2rem; padding: 5px 10px; border: 1px solid var(--primary); border-radius: 4px; color: var(--primary); background: transparent; cursor: pointer; }
 
         /* Hero Section with Video Background */
         .hero {
@@ -130,7 +129,7 @@
         }
         .yacht-card:hover { transform: translateY(-10px); }
        
-        /* Yacht Slideshow Styles - FIXED */
+        /* Yacht Slideshow */
         .yacht-slideshow {
             width: 100%;
             height: 500px;
@@ -150,7 +149,7 @@
             animation-iteration-count: infinite;
         }
 
-        /* Slideshow timing - FIXED */
+        /* Slideshow timing */
         .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow1; animation-delay: 0s; }
         .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow1; animation-delay: 4s; }
         .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow1; animation-delay: 8s; }
@@ -174,7 +173,7 @@
         .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow4; animation-delay: 10s; }
         .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow4; animation-delay: 15s; }
 
-        /* Animations - FIXED */
+        /* Animations */
         @keyframes slideShow1 {
             0%, 16.67% { opacity: 1; }
             20%, 100% { opacity: 0; }
@@ -202,40 +201,6 @@
         }
         .yacht-features span { display: flex; align-items: center; gap: 8px; }
         
-        /* New Pricing Options Section */
-        .pricing-options {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .pricing-options h4 {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        .route-option {
-            background: white;
-            padding: 15px;
-            border-left: 4px solid var(--primary);
-            margin-bottom: 10px;
-            border-radius: 4px;
-        }
-        .route-option h5 {
-            color: var(--secondary);
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .route-option ul {
-            padding-left: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .route-option li {
-            margin-bottom: 5px;
-        }
-        
         .yacht-price {
             display: flex; justify-content: space-between; align-items: center; margin-top: 20px;
         }
@@ -252,6 +217,170 @@
         .btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); }
         .btn-telegram { background: #0088cc; color: white; }
         .btn-telegram:hover { background: #006699; transform: translateY(-3px); }
+
+        /* Dubai Highlights Gallery */
+        .highlights-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .highlight-card {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .highlight-card:hover {
+            transform: scale(1.03);
+        }
+        .highlight-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .highlight-card:hover .highlight-image {
+            transform: scale(1.1);
+        }
+        .highlight-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+        }
+        .highlight-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Unified Routes & Pricing Section */
+        .routes-section {
+            background: linear-gradient(135deg, #0A2463 0%, #1A1A2E 100%);
+            color: white;
+            padding: 80px 20px;
+        }
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .route-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+        .route-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        .route-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .route-duration {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .route-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        .route-checkpoints {
+            list-style: none;
+        }
+        .route-checkpoints li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .route-checkpoints li:before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .route-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Special Offers Section */
+        .offers-section {
+            background: linear-gradient(45deg, #F8F5F2 0%, #FFFFFF 100%);
+        }
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .offer-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .offer-card:hover {
+            transform: translateY(-10px);
+        }
+        .offer-badge {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 8px 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .offer-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .offer-content {
+            padding: 25px;
+        }
+        .offer-content h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        .offer-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .offer-features span {
+            background: #F8F5F2;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
 
         /* Review Section */
         .review-slider {
@@ -381,37 +510,13 @@
             font-size: 0.9rem;
         }
 
-        /* Language-specific styles */
-        [lang="ar"] {
-            font-family: 'Arial', sans-serif;
-            direction: rtl;
-        }
-
-        [lang="ar"] .hero-content,
-        [lang="ar"] .section-title,
-        [lang="ar"] .yacht-info,
-        [lang="ar"] .footer-column {
-            text-align: right;
-        }
-
-        [lang="ar"] .nav-links a {
-            margin-left: 0;
-            margin-right: 2rem;
-        }
-
-        [lang="ar"] .route-option ul {
-            padding-right: 20px;
-            padding-left: 0;
-        }
-
-        [lang="ar"] .faq-question {
-            flex-direction: row-reverse;
-        }
-
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 { font-size: 2.8rem; }
             .section-title h2 { font-size: 2.3rem; }
+            .routes-grid, .offers-grid, .highlights-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -423,7 +528,9 @@
             .yacht-features { flex-direction: column; gap: 10px; }
             .cta-button { margin: 10px 0; display: block; }
             .contact-form-container { padding: 20px; }
-            .route-option h5 { flex-direction: column; gap: 5px; }
+            .routes-grid, .offers-grid, .highlights-gallery {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -439,14 +546,12 @@
         <div class="nav-container">
             <a href="#" class="logo"><i class="fas fa-ship"></i> <span>Ocean</span>Charters</a>
             <div class="nav-links">
-                <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
-                <a href="#yachts" data-en="Our Yachts" data-ar="اليخوت">Our Yachts</a>
-                <a href="#faq" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
-                <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-                <!-- Language Toggle Button -->
-                <button class="lang-toggle" onclick="toggleLanguage()" data-en="عربي" data-ar="English">
-                    عربي
-                </button>
+                <a href="#home">Home</a>
+                <a href="#yachts">Our Yachts</a>
+                <a href="#routes">Routes</a>
+                <a href="#offers">Special Offers</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </header>
@@ -460,16 +565,10 @@
         <div class="hero-overlay"></div>
        
         <div class="hero-content">
-            <h1 data-en="Experience Dubai from the Water" data-ar="استمتع بدبي من على الماء">
-                Experience Dubai from the Water
-            </h1>
-            <p data-en="Charter our exclusive luxury yachts for an unforgettable journey past Dubai Marina, Palm Jumeirah, and the iconic Burj Al Arab."
-               data-ar="استأجر يخوتنا الفاخرة الحصرية لرحلة لا تُنسى حول مارينا دبي، نخلة جميرا، وبرج العرب الرمزي.">
-                Charter our exclusive luxury yachts for an unforgettable journey past Dubai Marina, Palm Jumeirah, and the iconic Burj Al Arab.
-            </p>
-            <a href="#yachts" class="cta-button" data-en="View Our Fleet" data-ar="عرض أسطولنا">View Our Fleet</a>
-            <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary);"
-               data-en="Instant Enquiry" data-ar="استفسار فوري">Instant Enquiry</a>
+            <h1>Experience Dubai's Iconic Coastline</h1>
+            <p>Charter our luxury yachts for breathtaking views of Dubai Marina, Palm Jumeirah, and the magnificent Burj Al Arab. Create memories that last a lifetime.</p>
+            <a href="#yachts" class="cta-button">View Our Fleet</a>
+            <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary);">Instant Enquiry</a>
         </div>
     </section>
 
@@ -477,15 +576,12 @@
     <section class="section" id="yachts">
         <div class="container">
             <div class="section-title">
-                <h2 data-en="Our Premium Yacht Fleet" data-ar="أسطولنا الفاخر من اليخوت">Our Premium Yacht Fleet</h2>
-                <p data-en="Choose from our exclusive selection of luxury yachts"
-                   data-ar="اختر من مجموعة اليخوت الفاخرة الحصرية لدينا">
-                    Choose from our exclusive selection of luxury yachts
-                </p>
+                <h2>Our Premium Yacht Fleet</h2>
+                <p>Select from our exclusive collection of luxury yachts</p>
             </div>
 
             <div class="yacht-gallery">
-                <!-- ===== YACHT 1 ===== -->
+                <!-- Yacht 1 -->
                 <div class="yacht-card">
                     <div class="yacht-slideshow">
                         <div class="slide" style="background-image: url('majestry 8.jpg');"></div>
@@ -497,67 +593,33 @@
                     </div>
                    
                     <div class="yacht-info">
-                        <div class="yacht-location" data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</div>
-                        <h3 data-en="Majesty 50" data-ar="ماجستي ٥٠">Majesty 50</h3>
-                        <p data-en="Luxury yacht perfect for family trips and corporate events. Features spacious deck, modern interior, and professional crew."
-                           data-ar="يخت فاخر مثالي للرحلات العائلية والفعاليات التجارية. يتميز بسطح فسيح وداخلية حديثة وطاقم محترف.">
-                            Luxury yacht perfect for family trips and corporate events. Features spacious deck, modern interior, and professional crew.
-                        </p>
+                        <div class="yacht-location">Dubai Marina</div>
+                        <h3>Majesty 50</h3>
+                        <p>Perfect for family trips and corporate events. Features spacious deck, modern interior, and professional crew.</p>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> <span data-en="13 Guests" data-ar="١٣ ضيف">13 Guests</span></span>
-                            <span><i class="fas fa-bed"></i> <span data-en="2 Cabins" data-ar="٢ غرفة">2 Cabins</span></span>
-                            <span><i class="fas fa-ruler-combined"></i> <span data-en="50 ft" data-ar="٥٠ قدم">50 ft</span></span>
-                            <span><i class="fas fa-swimming-pool"></i> <span data-en="Swim Platform" data-ar="منصة سباحة">Swim Platform</span></span>
+                            <span><i class="fas fa-users"></i> 13 Guests</span>
+                            <span><i class="fas fa-bed"></i> 2 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 50 ft</span>
+                            <span><i class="fas fa-swimming-pool"></i> Swim Platform</span>
                         </div>
-                        
-                        <!-- Pricing Options Section -->
-                        <div class="pricing-options">
-                            <h4 data-en="Popular Routes & Pricing" data-ar="الرحلات الشعبية والأسعار">Popular Routes & Pricing</h4>
-                            <div class="route-option">
-                                <h5><span data-en="1 Hour Cruise" data-ar="رحلة ساعة واحدة">1 Hour Cruise</span> <span>AED 700</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="JBR Walk" data-ar="ممشى جميرا بيتش ريزيدنس">JBR Walk</li>
-                                    <li data-en="Dubai Eye (Ain Dubai)" data-ar="عين دبي">Dubai Eye (Ain Dubai)</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="2 Hour Cruise" data-ar="رحلة ساعتين">2 Hour Cruise</span> <span>AED 1,300</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="3 Hour Cruise" data-ar="رحلة ثلاث ساعات">3 Hour Cruise</span> <span>AED 1,900</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                    <li data-en="Atlantis The Palm" data-ar="أتلانتس النخلة">Atlantis The Palm</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 700 <span style="font-size:1rem; font-weight:normal;" data-en="/ hour" data-ar="/ ساعة">/ hour</span></div>
-                                <div class="price-note" data-en="Minimum 2 hours booking" data-ar="الحد الأدنى للحجز ساعتين">Minimum 2 hours booking</div>
+                                <div class="price-tag">AED 700 <span style="font-size:1rem; font-weight:normal;">/ hour</span></div>
+                                <div class="price-note">Minimum 2 hours booking</div>
                             </div>
                             <div class="enquiry-buttons">
                                 <a href="https://wa.me/971527872669?text=Hi! I'm interested in Majesty 50 yacht in Dubai" class="btn-whatsapp" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
-                                    <i class="fab fa-telegram"></i> <span data-en="Telegram" data-ar="تلغرام">Telegram</span>
+                                    <i class="fab fa-telegram"></i> Telegram
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ===== YACHT 2 ===== -->
+                <!-- Yacht 2 -->
                 <div class="yacht-card">
                     <div class="yacht-slideshow">
                         <div class="slide" style="background-image: url('yacht 11.jpg');"></div>
@@ -568,203 +630,234 @@
                     </div>
                    
                     <div class="yacht-info">
-                        <div class="yacht-location" data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</div>
-                        <h3 data-en="Silver Craft 40" data-ar="سيلفر كرافت ٤٠">Silver Craft 40</h3>
-                        <p data-en="Modern yacht with sleek design, perfect for romantic sunset cruises and small gatherings. Features sun deck and entertainment system."
-                           data-ar="يخت حديث بتصميم أنيق، مثالي للرحلات الرومانسية والتجمعات الصغيرة. يتميز بسطح للشمس ونظام ترفيه.">
-                            Modern yacht with sleek design, perfect for romantic sunset cruises and small gatherings. Features sun deck and entertainment system.
-                        </p>
+                        <div class="yacht-location">Dubai Marina</div>
+                        <h3>Silver Craft 40</h3>
+                        <p>Modern yacht with sleek design, perfect for romantic sunset cruises and small gatherings.</p>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> <span data-en="8 Guests" data-ar="٨ ضيوف">8 Guests</span></span>
-                            <span><i class="fas fa-bed"></i> <span data-en="3 Cabins" data-ar="٣ غرف">3 Cabins</span></span>
-                            <span><i class="fas fa-ruler-combined"></i> <span data-en="40 ft" data-ar="٤٠ قدم">40 ft</span></span>
-                            <span><i class="fas fa-swimming-pool"></i> <span data-en="Swim Platform" data-ar="منصة سباحة">Swim Platform</span></span>
+                            <span><i class="fas fa-users"></i> 8 Guests</span>
+                            <span><i class="fas fa-bed"></i> 3 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 40 ft</span>
+                            <span><i class="fas fa-swimming-pool"></i> Swim Platform</span>
                         </div>
-                        
-                        <!-- Pricing Options Section -->
-                        <div class="pricing-options">
-                            <h4 data-en="Popular Routes & Pricing" data-ar="الرحلات الشعبية والأسعار">Popular Routes & Pricing</h4>
-                            <div class="route-option">
-                                <h5><span data-en="1 Hour Cruise" data-ar="رحلة ساعة واحدة">1 Hour Cruise</span> <span>AED 500</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="JBR Walk" data-ar="ممشى جميرا بيتش ريزيدنس">JBR Walk</li>
-                                    <li data-en="Dubai Eye (Ain Dubai)" data-ar="عين دبي">Dubai Eye (Ain Dubai)</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="2 Hour Cruise" data-ar="رحلة ساعتين">2 Hour Cruise</span> <span>AED 900</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="3 Hour Cruise" data-ar="رحلة ثلاث ساعات">3 Hour Cruise</span> <span>AED 1,300</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                    <li data-en="Atlantis The Palm" data-ar="أتلانتس النخلة">Atlantis The Palm</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 500 <span style="font-size:1rem; font-weight:normal;" data-en="/ hour" data-ar="/ ساعة">/ hour</span></div>
-                                <div class="price-note" data-en="Minimum 2 hours booking" data-ar="الحد الأدنى للحجز ساعتين">Minimum 2 hours booking</div>
+                                <div class="price-tag">AED 500 <span style="font-size:1rem; font-weight:normal;">/ hour</span></div>
+                                <div class="price-note">Minimum 2 hours booking</div>
                             </div>
                             <div class="enquiry-buttons">
                                 <a href="https://wa.me/971527872669?text=Hi! I'm interested in Silver Craft 40 yacht in Dubai" class="btn-whatsapp" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
-                                    <i class="fab fa-telegram"></i> <span data-en="Telegram" data-ar="تلغرام">Telegram</span>
+                                    <i class="fab fa-telegram"></i> Telegram
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ===== YACHT 3 ===== -->
+                <!-- Yacht 3 -->
                 <div class="yacht-card">
                     <div class="yacht-slideshow">
-                        <div class="slide" style="background-image: url('boat3-1.jpg');"></div>
-                        <div class="slide" style="background-image: url('boat3-2.jpg');"></div>
-                        <div class="slide" style="background-image: url('boat3-3.jpg');"></div>
-                        <div class="slide" style="background-image: url('boat3-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('sunseeker1.jpg');"></div>
+                        <div class="slide" style="background-image: url('sunseeker2.jpg');"></div>
+                        <div class="slide" style="background-image: url('sunseeker3.jpg');"></div>
+                        <div class="slide" style="background-image: url('sunseeker4.jpg');"></div>
                     </div>
                    
                     <div class="yacht-info">
-                        <div class="yacht-location" data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</div>
-                        <h3 data-en="Sunseeker 65" data-ar="صن سيكر ٦٥">Sunseeker 65</h3>
-                        <p data-en="Ultra-luxury yacht with state-of-the-art amenities, perfect for VIP events and luxury parties. Includes jacuzzi and premium sound system."
-                           data-ar="يخت فاخر للغاية مع أحدث وسائل الراحة، مثالي لفعاليات كبار الشخصيات والحفلات الفاخرة. يتضمن جاكوزي ونظام صوتي متميز.">
-                            Ultra-luxury yacht with state-of-the-art amenities, perfect for VIP events and luxury parties. Includes jacuzzi and premium sound system.
-                        </p>
+                        <div class="yacht-location">Palm Jumeirah</div>
+                        <h3>Sunseeker 65</h3>
+                        <p>Ultra-luxury yacht with jacuzzi, premium sound system, and VIP amenities for unforgettable parties.</p>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> <span data-en="25 Guests" data-ar="٢٥ ضيف">25 Guests</span></span>
-                            <span><i class="fas fa-bed"></i> <span data-en="4 Cabins" data-ar="٤ غرف">4 Cabins</span></span>
-                            <span><i class="fas fa-ruler-combined"></i> <span data-en="65 ft" data-ar="٦٥ قدم">65 ft</span></span>
-                            <span><i class="fas fa-hot-tub"></i> <span data-en="Jacuzzi" data-ar="جاكوزي">Jacuzzi</span></span>
+                            <span><i class="fas fa-users"></i> 25 Guests</span>
+                            <span><i class="fas fa-bed"></i> 4 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 65 ft</span>
+                            <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
                         </div>
-                        
-                        <!-- Pricing Options Section -->
-                        <div class="pricing-options">
-                            <h4 data-en="Popular Routes & Pricing" data-ar="الرحلات الشعبية والأسعار">Popular Routes & Pricing</h4>
-                            <div class="route-option">
-                                <h5><span data-en="2 Hour Cruise" data-ar="رحلة ساعتين">2 Hour Cruise</span> <span>AED 2,500</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="3 Hour Cruise" data-ar="رحلة ثلاث ساعات">3 Hour Cruise</span> <span>AED 3,500</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                    <li data-en="Atlantis The Palm" data-ar="أتلانتس النخلة">Atlantis The Palm</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="4 Hour Cruise" data-ar="رحلة أربع ساعات">4 Hour Cruise</span> <span>AED 4,500</span></h5>
-                                <ul>
-                                    <li data-en="Full Palm Jumeirah Tour" data-ar="جولة كاملة حول نخلة جميرا">Full Palm Jumeirah Tour</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                    <li data-en="Atlantis" data-ar="أتلانتس">Atlantis</li>
-                                    <li data-en="World Islands View" data-ar="مشاهدة جزر العالم">World Islands View</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 1,250 <span style="font-size:1rem; font-weight:normal;" data-en="/ hour" data-ar="/ ساعة">/ hour</span></div>
-                                <div class="price-note" data-en="Minimum 3 hours booking" data-ar="الحد الأدنى للحجز ثلاث ساعات">Minimum 3 hours booking</div>
+                                <div class="price-tag">AED 1,250 <span style="font-size:1rem; font-weight:normal;">/ hour</span></div>
+                                <div class="price-note">Minimum 3 hours booking</div>
                             </div>
                             <div class="enquiry-buttons">
                                 <a href="https://wa.me/971527872669?text=Hi! I'm interested in Sunseeker 65 yacht in Dubai" class="btn-whatsapp" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
-                                    <i class="fab fa-telegram"></i> <span data-en="Telegram" data-ar="تلغرام">Telegram</span>
+                                    <i class="fab fa-telegram"></i> Telegram
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ===== YACHT 4 ===== -->
+                <!-- Yacht 4 -->
                 <div class="yacht-card">
                     <div class="yacht-slideshow">
-                        <div class="slide" style="background-image: url('boat4-1.jpg');"></div>
-                        <div class="slide" style="background-image: url('boat4-2.jpg');"></div>
-                        <div class="slide" style="background-image: url('boat4-3.jpg');"></div>
-                        <div class="slide" style="background-image: url('boat4-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('azimut1.jpg');"></div>
+                        <div class="slide" style="background-image: url('azimut2.jpg');"></div>
+                        <div class="slide" style="background-image: url('azimut3.jpg');"></div>
+                        <div class="slide" style="background-image: url('azimut4.jpg');"></div>
                     </div>
                    
                     <div class="yacht-info">
-                        <div class="yacht-location" data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</div>
-                        <h3 data-en="Azimut 55" data-ar="أزيموت ٥٥">Azimut 55</h3>
-                        <p data-en="Italian-designed luxury yacht offering exceptional comfort and style. Perfect for corporate events and luxury family outings."
-                           data-ar="يخت فاخر بتصميم إيطالي يقدم راحة وأناقة استثنائية. مثالي للفعاليات التجارية والرحلات العائلية الفاخرة.">
-                            Italian-designed luxury yacht offering exceptional comfort and style. Perfect for corporate events and luxury family outings.
-                        </p>
+                        <div class="yacht-location">Dubai Marina</div>
+                        <h3>Azimut 55</h3>
+                        <p>Italian-designed luxury yacht offering exceptional comfort and style for corporate events.</p>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> <span data-en="15 Guests" data-ar="١٥ ضيف">15 Guests</span></span>
-                            <span><i class="fas fa-bed"></i> <span data-en="3 Cabins" data-ar="٣ غرف">3 Cabins</span></span>
-                            <span><i class="fas fa-ruler-combined"></i> <span data-en="55 ft" data-ar="٥٥ قدم">55 ft</span></span>
-                            <span><i class="fas fa-tv"></i> <span data-en="Entertainment System" data-ar="نظام ترفيه">Entertainment System</span></span>
+                            <span><i class="fas fa-users"></i> 15 Guests</span>
+                            <span><i class="fas fa-bed"></i> 3 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 55 ft</span>
+                            <span><i class="fas fa-tv"></i> Entertainment System</span>
                         </div>
-                        
-                        <!-- Pricing Options Section -->
-                        <div class="pricing-options">
-                            <h4 data-en="Popular Routes & Pricing" data-ar="الرحلات الشعبية والأسعار">Popular Routes & Pricing</h4>
-                            <div class="route-option">
-                                <h5><span data-en="2 Hour Cruise" data-ar="رحلة ساعتين">2 Hour Cruise</span> <span>AED 1,800</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="3 Hour Cruise" data-ar="رحلة ثلاث ساعات">3 Hour Cruise</span> <span>AED 2,500</span></h5>
-                                <ul>
-                                    <li data-en="Dubai Marina" data-ar="مارينا دبي">Dubai Marina</li>
-                                    <li data-en="Palm Jumeirah" data-ar="نخلة جميرا">Palm Jumeirah</li>
-                                    <li data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</li>
-                                    <li data-en="Atlantis The Palm" data-ar="أتلانتس النخلة">Atlantis The Palm</li>
-                                </ul>
-                            </div>
-                            <div class="route-option">
-                                <h5><span data-en="Sunset Cruise" data-ar="رحلة غروب الشمس">Sunset Cruise</span> <span>AED 2,200</span></h5>
-                                <ul>
-                                    <li data-en="2.5 Hours" data-ar="ساعتين ونصف">2.5 Hours</li>
-                                    <li data-en="Best Sunset Views" data-ar="أفضل مشاهد الغروب">Best Sunset Views</li>
-                                    <li data-en="Palm Jumeirah & Burj Al Arab" data-ar="نخلة جميرا وبرج العرب">Palm Jumeirah & Burj Al Arab</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 900 <span style="font-size:1rem; font-weight:normal;" data-en="/ hour" data-ar="/ ساعة">/ hour</span></div>
-                                <div class="price-note" data-en="Minimum 2 hours booking" data-ar="الحد الأدنى للحجز ساعتين">Minimum 2 hours booking</div>
+                                <div class="price-tag">AED 900 <span style="font-size:1rem; font-weight:normal;">/ hour</span></div>
+                                <div class="price-note">Minimum 2 hours booking</div>
                             </div>
                             <div class="enquiry-buttons">
                                 <a href="https://wa.me/971527872669?text=Hi! I'm interested in Azimut 55 yacht in Dubai" class="btn-whatsapp" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram" target="_blank">
-                                    <i class="fab fa-telegram"></i> <span data-en="Telegram" data-ar="تلغرام">Telegram</span>
+                                    <i class="fab fa-telegram"></i> Telegram
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DUBAI HIGHLIGHTS GALLERY ========== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dubai's Iconic Landmarks</h2>
+                <p>Experience these breathtaking views from the water</p>
+            </div>
+            <div class="highlights-gallery">
+                <div class="highlight-card">
+                    <img src="dubai-marina-view.jpg" alt="Dubai Marina" class="highlight-image">
+                    <div class="highlight-overlay">
+                        <h3>Dubai Marina</h3>
+                        <p>Luxury waterfront skyline</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="palm-jumeirah-view.jpg" alt="Palm Jumeirah" class="highlight-image">
+                    <div class="highlight-overlay">
+                        <h3>Palm Jumeirah</h3>
+                        <p>The world's largest man-made island</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="burj-al-arab-view.jpg" alt="Burj Al Arab" class="highlight-image">
+                    <div class="highlight-overlay">
+                        <h3>Burj Al Arab</h3>
+                        <p>7-star luxury hotel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== UNIFIED ROUTES & PRICING ========== -->
+    <section class="routes-section" id="routes">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Popular Routes & Pricing</h2>
+                <p style="color: rgba(255,255,255,0.8);">Choose your perfect Dubai coastline experience</p>
+            </div>
+            <div class="routes-grid">
+                <div class="route-card">
+                    <div class="route-header">
+                        <div class="route-duration">1 HOUR</div>
+                        <div class="route-icon"><i class="fas fa-clock"></i></div>
+                    </div>
+                    <div class="route-price">From AED 500</div>
+                    <ul class="route-checkpoints">
+                        <li>Dubai Marina</li>
+                        <li>JBR Walk</li>
+                        <li>Dubai Eye (Ain Dubai)</li>
+                    </ul>
+                    <p class="route-note">Perfect for quick sightseeing</p>
+                </div>
+                <div class="route-card">
+                    <div class="route-header">
+                        <div class="route-duration">2 HOURS</div>
+                        <div class="route-icon"><i class="fas fa-sun"></i></div>
+                    </div>
+                    <div class="route-price">From AED 900</div>
+                    <ul class="route-checkpoints">
+                        <li>Dubai Marina</li>
+                        <li>Palm Jumeirah</li>
+                        <li>Burj Al Arab</li>
+                    </ul>
+                    <p class="route-note">Best sunset cruise route</p>
+                </div>
+                <div class="route-card">
+                    <div class="route-header">
+                        <div class="route-duration">3 HOURS</div>
+                        <div class="route-icon"><i class="fas fa-crown"></i></div>
+                    </div>
+                    <div class="route-price">From AED 1,300</div>
+                    <ul class="route-checkpoints">
+                        <li>Dubai Marina</li>
+                        <li>Palm Jumeirah</li>
+                        <li>Burj Al Arab</li>
+                        <li>Atlantis The Palm</li>
+                    </ul>
+                    <p class="route-note">Complete Dubai experience</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; opacity: 0.8; color: white;">
+                <i class="fas fa-info-circle"></i> Prices vary based on yacht selection. Contact us for custom routes.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== SPECIAL OFFERS ========== -->
+    <section class="section offers-section" id="offers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Special Packages</h2>
+                <p>Exclusive offers for unforgettable experiences</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">MOST POPULAR</div>
+                    <img src="sunset-cruise.jpg" alt="Sunset Cruise" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Golden Hour Sunset Cruise</h3>
+                        <p>Experience Dubai's magical sunset from the water with champagne and gourmet snacks.</p>
+                        <div class="offer-features">
+                            <span><i class="fas fa-clock"></i> 2.5 Hours</span>
+                            <span><i class="fas fa-users"></i> Up to 15 Guests</span>
+                            <span><i class="fas fa-camera"></i> Photo Service</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <div class="price-tag">AED 1,800</div>
+                            <a href="#contact" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">ROMANTIC</div>
+                    <img src="romantic-dinner.jpg" alt="Romantic Dinner" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Private Romantic Dinner</h3>
+                        <p>Intimate dinner for two with personal chef, floral decorations, and live music.</p>
+                        <div class="offer-features">
+                            <span><i class="fas fa-clock"></i> 3 Hours</span>
+                            <span><i class="fas fa-utensils"></i> 5-Course Meal</span>
+                            <span><i class="fas fa-gem"></i> VIP Service</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <div class="price-tag">AED 2,500</div>
+                            <a href="#contact" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -776,24 +869,19 @@
     <section class="section" id="reviews" style="background-color: #f9f9f9;">
         <div class="container">
             <div class="section-title">
-                <h2 data-en="Guest Reviews" data-ar="تعليقات العملاء">Guest Reviews</h2>
-                <p data-en="See what our clients say about their experience."
-                   data-ar="شاهد ما يقوله عملاؤنا عن تجربتهم.">
-                    See what our clients say about their experience.
-                </p>
+                <h2>Guest Reviews</h2>
+                <p>See what our clients say about their experience</p>
             </div>
             <div class="review-slider">
-                <div class="review-text" data-en="An absolutely amazing experience! The yacht was pristine, the crew was professional, and the views of Dubai were breathtaking. We will definitely book again!"
-                       data-ar="تجربة رائعة بكل معنى الكلمة! اليخت كان نظيفاً، الطاقم كان محترفاً، ومشاهد دبي كانت خلابة. سنحجز مرة أخرى بالتأكيد!">
+                <div class="review-text">
                     An absolutely amazing experience! The yacht was pristine, the crew was professional, and the views of Dubai were breathtaking. We will definitely book again!
                 </div>
-                <div class="review-author">- Ahmed R. <span data-en="(Family Trip)" data-ar="(رحلة عائلية)">(Family Trip)</span></div>
+                <div class="review-author">- Ahmed R. (Family Trip)</div>
                 <br>
-                <div class="review-text" data-en="The sunset cruise around Palm Jumeirah was unforgettable. Excellent service, beautiful yacht, and memories that will last a lifetime."
-                       data-ar="رحلة غروب الشمس حول نخلة جميرا كانت لا تُنسى. خدمة ممتازة، يخت جميل، وذكريات ستظل مدى الحياة.">
+                <div class="review-text">
                     The sunset cruise around Palm Jumeirah was unforgettable. Excellent service, beautiful yacht, and memories that will last a lifetime.
                 </div>
-                <div class="review-author">- Sarah L. <span data-en="(Romantic Cruise)" data-ar="(رحلة رومانسية)">(Romantic Cruise)</span></div>
+                <div class="review-author">- Sarah L. (Romantic Cruise)</div>
             </div>
         </div>
     </section>
@@ -802,83 +890,44 @@
     <section class="section" id="faq">
         <div class="container">
             <div class="section-title">
-                <h2 data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
-                <p data-en="Find answers to common questions about yacht charters"
-                   data-ar="اعثر على إجابات للأسئلة الشائعة حول تأجير اليخوت">
-                    Find answers to common questions about yacht charters
-                </p>
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span data-en="What is included in the yacht rental price?" data-ar="ما المدرج في سعر تأجير اليخت؟">What is included in the yacht rental price?</span>
+                        <span>What is included in the yacht rental price?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-en="The rental price includes the yacht, professional captain and crew, fuel for the agreed route, insurance, and basic amenities. Food, beverages, and additional services can be arranged at extra cost."
-                           data-ar="يشمل سعر الإيجار اليخت، القبطان المحترف والطاقم، الوقود للطريق المتفق عليه، التأمين، والمرافق الأساسية. يمكن ترتيب الطعام والمشروبات والخدمات الإضافية بتكلفة إضافية.">
-                            The rental price includes the yacht, professional captain and crew, fuel for the agreed route, insurance, and basic amenities. Food, beverages, and additional services can be arranged at extra cost.
-                        </p>
+                        <p>The rental includes the yacht, professional captain and crew, fuel for the agreed route, insurance, and basic amenities. Additional services like food, beverages, and decorations are available at extra cost.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span data-en="What is the minimum booking duration?" data-ar="ما هي المدة الدنيا للحجز؟">What is the minimum booking duration?</span>
+                        <span>What is the minimum booking duration?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-en="Minimum booking is 2 hours for most yachts, with 3 hours minimum for larger luxury vessels. We recommend at least 2 hours to enjoy the main Dubai landmarks."
-                           data-ar="الحد الأدنى للحجز هو ساعتين لمعظم اليخوت، مع 3 ساعات كحد أدنى للقوارب الفاخرة الأكبر. نوصي بساعتين على الأقل للاستمتاع بمعالم دبي الرئيسية.">
-                            Minimum booking is 2 hours for most yachts, with 3 hours minimum for larger luxury vessels. We recommend at least 2 hours to enjoy the main Dubai landmarks.
-                        </p>
+                        <p>Minimum booking is 2 hours for standard yachts and 3 hours for luxury vessels. We recommend at least 2 hours to properly enjoy Dubai's coastline.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span data-en="Can we bring our own food and drinks?" data-ar="هل يمكننا إحضار طعامنا ومشروباتنا؟">Can we bring our own food and drinks?</span>
+                        <span>Can we customize our route?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-en="Yes, you can bring your own food and non-alcoholic beverages. For alcoholic drinks, we can arrange through our licensed catering partners (additional cost)."
-                           data-ar="نعم، يمكنك إحضار طعامك ومشروباتك غير الكحولية. بالنسبة للمشروبات الكحولية، يمكننا الترتيب من خلال شركائنا المرخصين (بتكلفة إضافية).">
-                            Yes, you can bring your own food and non-alcoholic beverages. For alcoholic drinks, we can arrange through our licensed catering partners (additional cost).
-                        </p>
+                        <p>Absolutely! While we offer popular routes, you can customize your itinerary. Our captains know the best spots and can suggest routes based on your preferences.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span data-en="Is there a deposit required?" data-ar="هل يلزم دفع وديعة؟">Is there a deposit required?</span>
+                        <span>What happens in case of bad weather?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-en="A security deposit is required for all bookings, which is fully refundable after the trip if no damages occur. The amount varies by yacht size."
-                           data-ar="مطلوب وديعة أمان لجميع الحجوزات، والتي يتم استردادها بالكامل بعد الرحلة إذا لم تحدث أي أضرار. يختلف المبلغ حسب حجم اليخت.">
-                            A security deposit is required for all bookings, which is fully refundable after the trip if no damages occur. The amount varies by yacht size.
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span data-en="What happens in case of bad weather?" data-ar="ماذا يحدث في حالة سوء الأحوال الجوية؟">What happens in case of bad weather?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p data-en="Safety is our priority. If the trip is canceled due to bad weather, you can reschedule or receive a full refund. We monitor weather conditions closely."
-                           data-ar="السلامة هي أولويتنا. إذا تم إلغاء الرحلة بسبب سوء الأحوال الجوية، يمكنك إعادة الجدولة أو استرداد كامل المبلغ. نراقب الظروف الجوية عن كثب.">
-                            Safety is our priority. If the trip is canceled due to bad weather, you can reschedule or receive a full refund. We monitor weather conditions closely.
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span data-en="What is the cancellation policy?" data-ar="ما هي سياسة الإلغاء؟">What is the cancellation policy?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p data-en="Free cancellation up to 48 hours before the trip. 50% refund for cancellations 24-48 hours before. No refund for cancellations less than 24 hours before."
-                           data-ar="إلغاء مجاني حتى 48 ساعة قبل الرحلة. استرداد 50٪ للإلغاء قبل 24-48 ساعة. لا يوجد استرداد للإلغاء قبل أقل من 24 ساعة.">
-                            Free cancellation up to 48 hours before the trip. 50% refund for cancellations 24-48 hours before. No refund for cancellations less than 24 hours before.
-                        </p>
+                        <p>Safety is our priority. If weather conditions are unsafe, you can reschedule or receive a full refund. We monitor weather closely and will inform you in advance.</p>
                     </div>
                 </div>
             </div>
@@ -889,69 +938,51 @@
     <section class="section" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
-                <p data-en="Get in touch to plan your perfect yacht day."
-                   data-ar="اتصل بنا لتنظيم يوم اليخت المثالي.">
-                    Get in touch to plan your perfect yacht day.
-                </p>
+                <h2>Contact Us</h2>
+                <p>Get in touch to plan your perfect yacht day</p>
             </div>
             <div class="contact-form-container">
                 <form id="enquiryForm">
                     <div class="form-group">
-                        <label for="name" data-en="Full Name *" data-ar="الاسم الكامل *">Full Name *</label>
+                        <label for="name">Full Name *</label>
                         <input type="text" id="name" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="email" data-en="Email Address *" data-ar="البريد الإلكتروني *">Email Address *</label>
+                        <label for="email">Email Address *</label>
                         <input type="email" id="email" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone" data-en="Phone Number *" data-ar="رقم الهاتف *">Phone Number *</label>
+                        <label for="phone">Phone Number *</label>
                         <input type="tel" id="phone" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="yacht" data-en="Select Yacht *" data-ar="اختر اليخت *">Select Yacht *</label>
+                        <label for="yacht">Select Yacht *</label>
                         <select id="yacht" class="form-control" required>
-                            <option value="" data-en="Select a yacht" data-ar="اختر يخت">Select a yacht</option>
-                            <option value="Majesty 50" data-en="Majesty 50" data-ar="ماجستي ٥٠">Majesty 50</option>
-                            <option value="Silver Craft 40" data-en="Silver Craft 40" data-ar="سيلفر كرافت ٤٠">Silver Craft 40</option>
-                            <option value="Sunseeker 65" data-en="Sunseeker 65" data-ar="صن سيكر ٦٥">Sunseeker 65</option>
-                            <option value="Azimut 55" data-en="Azimut 55" data-ar="أزيموت ٥٥">Azimut 55</option>
+                            <option value="">Select a yacht</option>
+                            <option value="Majesty 50">Majesty 50</option>
+                            <option value="Silver Craft 40">Silver Craft 40</option>
+                            <option value="Sunseeker 65">Sunseeker 65</option>
+                            <option value="Azimut 55">Azimut 55</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="duration" data-en="Preferred Duration *" data-ar="المدة المفضلة *">Preferred Duration *</label>
+                        <label for="duration">Preferred Duration *</label>
                         <select id="duration" class="form-control" required>
-                            <option value="" data-en="Select duration" data-ar="اختر المدة">Select duration</option>
-                            <option value="1 hour" data-en="1 Hour" data-ar="ساعة واحدة">1 Hour</option>
-                            <option value="2 hours" data-en="2 Hours" data-ar="ساعتين">2 Hours</option>
-                            <option value="3 hours" data-en="3 Hours" data-ar="ثلاث ساعات">3 Hours</option>
-                            <option value="4+ hours" data-en="4+ Hours" data-ar="أربع ساعات وأكثر">4+ Hours</option>
+                            <option value="">Select duration</option>
+                            <option value="1 hour">1 Hour</option>
+                            <option value="2 hours">2 Hours</option>
+                            <option value="3 hours">3 Hours</option>
+                            <option value="4+ hours">4+ Hours</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="date" data-en="Preferred Date *" data-ar="التاريخ المفضل *">Preferred Date *</label>
-                        <input type="date" id="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="guests" data-en="Number of Guests *" data-ar="عدد الضيوف *">Number of Guests *</label>
-                        <input type="number" id="guests" class="form-control" min="1" max="50" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" data-en="Special Requests / Questions" data-ar="طلبات خاصة / أسئلة">Special Requests / Questions</label>
-                        <textarea id="message" class="form-control" rows="4"
-                                  data-placeholder-en="Please mention any special requirements or questions..."
-                                  data-placeholder-ar="يرجى ذكر أي متطلبات خاصة أو أسئلة..."></textarea>
+                        <label for="message">Special Requests</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Please mention any special requirements..."></textarea>
                     </div>
                     <p style="margin-bottom: 20px; font-size: 0.9rem;">
-                        <strong data-en="Prefer direct chat?" data-ar="تفضل المحادثة المباشرة؟">Prefer direct chat?</strong>
-                        <span data-en="Use the WhatsApp or Telegram buttons above for instant response."
-                              data-ar="استخدم أزرار الواتساب أو تلغرام أعلاه للرد الفوري.">
-                            Use the WhatsApp or Telegram buttons above for instant response.
-                        </span>
+                        <strong>Prefer direct chat?</strong> Use the WhatsApp or Telegram buttons above for instant response.
                     </p>
-                    <button type="submit" class="cta-button" style="width: 100%;"
-                            data-en="Send Enquiry" data-ar="إرسال الاستفسار">Send Enquiry</button>
+                    <button type="submit" class="cta-button" style="width: 100%;">Send Enquiry</button>
                 </form>
             </div>
         </div>
@@ -961,11 +992,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-column">
-                <h3 data-en="Ocean Charters Dubai" data-ar="أوشن تشارترز دبي">Ocean Charters Dubai</h3>
-                <p data-en="Providing luxury yacht charter experiences in Dubai since 2023. Safety, professionalism, and unforgettable memories."
-                   data-ar="نقدم تجارب تأجير يخوت فاخرة في دبي منذ ٢٠٢٣. سلامة، احترافية، وذكريات لا تنسى.">
-                    Providing luxury yacht charter experiences in Dubai since 2023. Safety, professionalism, and unforgettable memories.
-                </p>
+                <h3>Ocean Charters Dubai</h3>
+                <p>Providing luxury yacht charter experiences in Dubai since 2023. Safety, professionalism, and unforgettable memories.</p>
                 <div class="social-links">
                     <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
@@ -973,28 +1001,27 @@
                 </div>
             </div>
             <div class="footer-column">
-                <h3 data-en="Quick Contact" data-ar="اتصال سريع">Quick Contact</h3>
+                <h3>Quick Contact</h3>
                 <p><i class="fas fa-phone"></i> +971 52 787 2669</p>
                 <p><i class="fas fa-envelope"></i> bookinghubdubai@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> <span data-en="Dubai Marina, Dubai, UAE" data-ar="مارينا دبي، دبي، الإمارات">Dubai Marina, Dubai, UAE</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> Dubai Marina, Dubai, UAE</p>
             </div>
             <div class="footer-column">
-                <h3 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
-                <p><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></p>
-                <p><a href="#yachts" data-en="Our Yachts" data-ar="اليخوت">Our Yachts</a></p>
-                <p><a href="#faq" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a></p>
-                <p><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></p>
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#yachts">Our Yachts</a></p>
+                <p><a href="#routes">Routes</a></p>
+                <p><a href="#offers">Special Offers</a></p>
             </div>
             <div class="footer-column">
-                <h3 data-en="Operating Hours" data-ar="ساعات العمل">Operating Hours</h3>
-                <p data-en="Daily: 9:00 AM - 10:00 PM" data-ar="يومياً: ٩ صباحاً - ١٠ مساءً">Daily: 9:00 AM - 10:00 PM</p>
-                <p data-en="24/7 Booking Support" data-ar="دعم الحجز على مدار الساعة">24/7 Booking Support</p>
-                <p data-en="Instant WhatsApp Response" data-ar="رد فوري على واتساب">Instant WhatsApp Response</p>
+                <h3>Operating Hours</h3>
+                <p>Daily: 9:00 AM - 10:00 PM</p>
+                <p>24/7 Booking Support</p>
+                <p>Instant WhatsApp Response</p>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; <span id="currentYear"></span> <span data-en="Ocean Charters Dubai. All rights reserved."
-                   data-ar="أوشن تشارترز دبي. جميع الحقوق محفوظة.">Ocean Charters Dubai. All rights reserved.</span></p>
+            <p>&copy; <span id="currentYear"></span> Ocean Charters Dubai. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1005,22 +1032,11 @@
         // Form submission handler
         document.getElementById('enquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const language = document.documentElement.lang;
-            if(language === 'ar') {
-                alert('شكراً! تم إرسال استفسارك. سنتصل بك قريباً.');
-            } else {
-                alert('Thank you! Your enquiry has been sent. We will contact you soon.');
-            }
+            alert('Thank you! Your enquiry has been sent. We will contact you soon.');
             this.reset();
-            
-            // Set minimum date to tomorrow
-            const dateInput = document.getElementById('date');
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            dateInput.min = tomorrow.toISOString().split('T')[0];
         });
 
-        // FAQ Accordion Functionality
+        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
@@ -1028,70 +1044,15 @@
             });
         });
 
-        // Enhanced Language Toggle System
-        let currentLanguage = 'en';
-       
-        function toggleLanguage() {
-            const newLang = currentLanguage === 'en' ? 'ar' : 'en';
-            currentLanguage = newLang;
-           
-            // Update HTML lang attribute
-            document.documentElement.lang = newLang;
-           
-            // Update all elements with data-en and data-ar attributes
-            document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
-                if(element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    // Handle input placeholders
-                    const placeholderAttr = newLang === 'en' ? 'data-placeholder-en' : 'data-placeholder-ar';
-                    if(element.hasAttribute(placeholderAttr)) {
-                        element.placeholder = element.getAttribute(placeholderAttr);
-                    }
-                } else if(element.hasAttribute('data-' + newLang)) {
-                    // Update text content
-                    element.textContent = element.getAttribute('data-' + newLang);
-                }
-            });
-           
-            // Update select options
-            document.querySelectorAll('option[data-en], option[data-ar]').forEach(option => {
-                if(option.hasAttribute('data-' + newLang)) {
-                    option.textContent = option.getAttribute('data-' + newLang);
-                }
-            });
-           
-            // Update language toggle button text
-            const toggleBtn = document.querySelector('.lang-toggle');
-            toggleBtn.textContent = newLang === 'en' ? 'عربي' : 'English';
-           
-            // Update direction for RTL languages
-            if(newLang === 'ar') {
-                document.body.style.direction = 'rtl';
-                document.body.classList.add('rtl');
-            } else {
-                document.body.style.direction = 'ltr';
-                document.body.classList.remove('rtl');
-            }
-        }
-
-        // Initialize with English
-        document.documentElement.lang = 'en';
-       
-        // Set minimum date to tomorrow for date input
+        // Set minimum date to tomorrow
         const dateInput = document.getElementById('date');
         if(dateInput) {
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             dateInput.min = tomorrow.toISOString().split('T')[0];
         }
-       
-        // Video fallback for unsupported browsers
-        const video = document.querySelector('.video-background');
-        if(video && !video.canPlayType) {
-            video.style.display = 'none';
-            document.querySelector('.hero').style.backgroundImage = "linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.9)), url('fallback-hero-image.jpg')";
-        }
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1110,21 +1071,20 @@
             const slideshows = document.querySelectorAll('.yacht-slideshow');
             slideshows.forEach(slideshow => {
                 const slides = slideshow.querySelectorAll('.slide');
-                slides.forEach((slide, index) => {
-                    // Force animation to start
+                slides.forEach(slide => {
                     slide.style.animationPlayState = 'running';
                 });
             });
         });
 
-        // Close FAQ when clicking outside
-        document.addEventListener('click', function(e) {
-            if(!e.target.closest('.faq-item')) {
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-            }
-        });
+        // Dynamic route price calculation (example)
+        function updateRoutePrice() {
+            // This can be enhanced to show dynamic pricing based on yacht selection
+            console.log("Route pricing system ready");
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', updateRoutePrice);
     </script>
 </body>
 </html>
