@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Charters Dubai | 10 Luxury Yachts for Rent</title>
+    <title>Ocean Charters Dubai | 10 Luxury Yachts & Jet Car</title>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
             --accent: #B8860B; /* Dark Gold */
             --light: #F8F5F2; /* Light Background */
             --dark: #1A1A2E; /* Dark Background */
+            --pink: #FF69B4; /* Pink for Jet Car */
             --text: #333333;
             --white: #FFFFFF;
         }
@@ -140,6 +141,8 @@
             background: var(--secondary);
             color: white;
         }
+        .filter-btn.pink { border-color: var(--pink); }
+        .filter-btn.pink.active, .filter-btn.pink:hover { background: var(--pink); }
 
         /* Yacht Grid */
         .yacht-grid {
@@ -153,17 +156,153 @@
             background: var(--white); border-radius: 15px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
+            position: relative;
         }
         .yacht-card:hover { transform: translateY(-10px); }
        
-        /* Yacht Image */
-        .yacht-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-bottom: 3px solid var(--primary);
+        /* Special badge for Jet Car */
+        .jet-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--pink);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
         }
        
+        /* Yacht Slideshow */
+        .yacht-slideshow {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+        }
+       
+        /* Individual slide animations for each yacht */
+        .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow1; animation-delay: 0s; }
+        .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow1; animation-delay: 5s; }
+        .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow1; animation-delay: 10s; }
+        .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow1; animation-delay: 15s; }
+        .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow1; animation-delay: 20s; }
+        .yacht-card:nth-child(1) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow1; animation-delay: 25s; }
+
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow2; animation-delay: 0s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow2; animation-delay: 5s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow2; animation-delay: 10s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow2; animation-delay: 15s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow2; animation-delay: 20s; }
+        .yacht-card:nth-child(2) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow2; animation-delay: 25s; }
+
+        .yacht-card:nth-child(3) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow3; animation-delay: 0s; }
+        .yacht-card:nth-child(3) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow3; animation-delay: 5s; }
+        .yacht-card:nth-child(3) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow3; animation-delay: 10s; }
+        .yacht-card:nth-child(3) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow3; animation-delay: 15s; }
+        .yacht-card:nth-child(3) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow3; animation-delay: 20s; }
+        .yacht-card:nth-child(3) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow3; animation-delay: 25s; }
+
+        .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow4; animation-delay: 0s; }
+        .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow4; animation-delay: 5s; }
+        .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow4; animation-delay: 10s; }
+        .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow4; animation-delay: 15s; }
+        .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow4; animation-delay: 20s; }
+        .yacht-card:nth-child(4) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow4; animation-delay: 25s; }
+
+        .yacht-card:nth-child(5) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow5; animation-delay: 0s; }
+        .yacht-card:nth-child(5) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow5; animation-delay: 5s; }
+        .yacht-card:nth-child(5) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow5; animation-delay: 10s; }
+        .yacht-card:nth-child(5) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow5; animation-delay: 15s; }
+        .yacht-card:nth-child(5) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow5; animation-delay: 20s; }
+        .yacht-card:nth-child(5) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow5; animation-delay: 25s; }
+
+        .yacht-card:nth-child(6) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow6; animation-delay: 0s; }
+        .yacht-card:nth-child(6) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow6; animation-delay: 5s; }
+        .yacht-card:nth-child(6) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow6; animation-delay: 10s; }
+        .yacht-card:nth-child(6) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow6; animation-delay: 15s; }
+        .yacht-card:nth-child(6) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow6; animation-delay: 20s; }
+        .yacht-card:nth-child(6) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow6; animation-delay: 25s; }
+
+        .yacht-card:nth-child(7) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow7; animation-delay: 0s; }
+        .yacht-card:nth-child(7) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow7; animation-delay: 5s; }
+        .yacht-card:nth-child(7) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow7; animation-delay: 10s; }
+        .yacht-card:nth-child(7) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow7; animation-delay: 15s; }
+        .yacht-card:nth-child(7) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow7; animation-delay: 20s; }
+        .yacht-card:nth-child(7) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow7; animation-delay: 25s; }
+
+        .yacht-card:nth-child(8) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow8; animation-delay: 0s; }
+        .yacht-card:nth-child(8) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow8; animation-delay: 5s; }
+        .yacht-card:nth-child(8) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow8; animation-delay: 10s; }
+        .yacht-card:nth-child(8) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow8; animation-delay: 15s; }
+        .yacht-card:nth-child(8) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow8; animation-delay: 20s; }
+        .yacht-card:nth-child(8) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow8; animation-delay: 25s; }
+
+        .yacht-card:nth-child(9) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow9; animation-delay: 0s; }
+        .yacht-card:nth-child(9) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow9; animation-delay: 5s; }
+        .yacht-card:nth-child(9) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow9; animation-delay: 10s; }
+        .yacht-card:nth-child(9) .yacht-slideshow .slide:nth-child(4) { animation-name: slideShow9; animation-delay: 15s; }
+        .yacht-card:nth-child(9) .yacht-slideshow .slide:nth-child(5) { animation-name: slideShow9; animation-delay: 20s; }
+        .yacht-card:nth-child(9) .yacht-slideshow .slide:nth-child(6) { animation-name: slideShow9; animation-delay: 25s; }
+
+        /* Jet Car - only 3 slides */
+        .yacht-card:nth-child(10) .yacht-slideshow .slide:nth-child(1) { animation-name: slideShow10; animation-delay: 0s; }
+        .yacht-card:nth-child(10) .yacht-slideshow .slide:nth-child(2) { animation-name: slideShow10; animation-delay: 10s; }
+        .yacht-card:nth-child(10) .yacht-slideshow .slide:nth-child(3) { animation-name: slideShow10; animation-delay: 20s; }
+
+        /* Animations */
+        @keyframes slideShow1 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow2 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow3 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow4 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow5 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow6 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow7 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow8 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow9 {
+            0%, 16.67% { opacity: 1; }
+            20%, 100% { opacity: 0; }
+        }
+        @keyframes slideShow10 {
+            0%, 33.33% { opacity: 1; }
+            40%, 100% { opacity: 0; }
+        }
+
         .yacht-info { padding: 25px; }
         .yacht-info h3 { color: var(--secondary); font-size: 1.6rem; margin-bottom: 10px; }
         .yacht-location { color: var(--primary); font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
@@ -261,65 +400,6 @@
             left: 0;
             font-weight: bold;
         }
-
-        /* Special Offers */
-        .offers-section {
-            background: linear-gradient(45deg, #F8F5F2 0%, #FFFFFF 100%);
-        }
-        .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-        .offer-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .offer-card:hover {
-            transform: translateY(-10px);
-        }
-        .offer-badge {
-            background: var(--primary);
-            color: var(--dark);
-            padding: 8px 20px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .offer-image {
-            height: 180px;
-            width: 100%;
-            object-fit: cover;
-        }
-        .offer-content {
-            padding: 20px;
-        }
-        .offer-content h3 {
-            color: var(--secondary);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        /* Review Section */
-        .review-slider {
-            max-width: 800px;
-            margin: 40px auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .review-text { font-style: italic; font-size: 1.1rem; margin-bottom: 25px; line-height: 1.8; }
-        .review-author { font-weight: 700; color: var(--secondary); }
 
         /* FAQ Section */
         .faq-container {
@@ -469,7 +549,7 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 2rem; }
             .section-title h2 { font-size: 2rem; }
-            .routes-grid, .offers-grid { grid-template-columns: 1fr; }
+            .routes-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -480,9 +560,8 @@
             <a href="#" class="logo"><i class="fas fa-ship"></i> <span>Ocean</span>Charters</a>
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#yachts">Our Yachts (10)</a>
+                <a href="#yachts">10 Vessels</a>
                 <a href="#routes">Routes</a>
-                <a href="#offers">Special Offers</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -501,51 +580,302 @@
         <div class="hero-overlay"></div>
        
         <div class="hero-content">
-            <h1>Dubai's Largest Luxury Yacht Fleet</h1>
-            <p>Choose from 10 premium yachts for your perfect Dubai adventure. From intimate cruises to grand celebrations.</p>
-            <a href="#yachts" class="cta-button">View All 10 Yachts</a>
-            <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary);">Instant Enquiry</a>
+            <h1>10 Luxury Yachts & Jet Car in Dubai</h1>
+            <p>From intimate cruises to grand celebrations. Choose from our fleet of 9 premium yachts and 1 exclusive pink jet car.</p>
+            <a href="#yachts" class="cta-button">View All 10 Vessels</a>
+            <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary);">Instant Booking</a>
         </div>
     </section>
 
-    <!-- ========== 10 YACHT GALLERY SECTION ========== -->
+    <!-- ========== 10 YACHTS & JET CAR GALLERY ========== -->
     <section class="section" id="yachts">
         <div class="container">
             <div class="section-title">
-                <h2>Our 10 Luxury Yachts</h2>
-                <p>Largest selection in Dubai - Find your perfect match</p>
+                <h2>Our Fleet of 10 Luxury Vessels</h2>
+                <p>9 Luxury Yachts + 1 Exclusive Pink Jet Car</p>
             </div>
 
             <!-- Yacht Filter -->
             <div class="yacht-filter">
-                <button class="filter-btn active" data-filter="all">All Yachts</button>
-                <button class="filter-btn" data-filter="small">Small (2-8 guests)</button>
-                <button class="filter-btn" data-filter="medium">Medium (9-15 guests)</button>
-                <button class="filter-btn" data-filter="large">Large (16-25 guests)</button>
-                <button class="filter-btn" data-filter="luxury">Luxury</button>
+                <button class="filter-btn active" data-filter="all">All Vessels</button>
+                <button class="filter-btn" data-filter="yacht">Yachts Only</button>
+                <button class="filter-btn pink" data-filter="jet">Jet Car</button>
+                <button class="filter-btn" data-filter="large">Large Capacity</button>
+                <button class="filter-btn" data-filter="small">Small Groups</button>
             </div>
 
-            <!-- Yacht Grid - 10 Yachts -->
+            <!-- Yacht Grid - 10 Vessels -->
             <div class="yacht-grid">
-                <!-- Yacht 1 -->
-                <div class="yacht-card" data-size="medium" data-type="luxury">
-                    <img src="majesty50-1.jpg" alt="Majesty 50" class="yacht-image">
+                <!-- Yacht 1: Black Pearl -->
+                <div class="yacht-card" data-type="yacht" data-size="large">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('black-pearl-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('black-pearl-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('black-pearl-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('black-pearl-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('black-pearl-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('black-pearl-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
+                        <h3>Black Pearl</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 50 Guests</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                            <span><i class="fas fa-ship"></i> Luxury Yacht</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 1,999<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Perfect for large groups</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Black Pearl yacht for 1 hour - AED 1,999" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 2: Carmen -->
+                <div class="yacht-card" data-type="yacht" data-size="medium">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('carmen-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('carmen-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('carmen-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('carmen-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('carmen-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('carmen-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Palm Jumeirah</div>
+                        <h3>Carmen</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 30 Guests</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                            <span><i class="fas fa-ship"></i> Premium Yacht</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 2,999<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Elegant design</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Carmen yacht for 1 hour - AED 2,999" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 3: Deemas -->
+                <div class="yacht-card" data-type="yacht" data-size="large">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('deemas-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('deemas-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('deemas-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('deemas-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('deemas-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('deemas-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
+                        <h3>Deemas</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 110 Guests</span>
+                            <span><i class="fas fa-ruler"></i> 125 ft</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 4,499<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Largest capacity</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Deemas yacht for 1 hour - AED 4,499" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 4: Majesty -->
+                <div class="yacht-card" data-type="yacht" data-size="medium">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('majesty-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
+                        <h3>Majesty</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 20 Guests</span>
+                            <span><i class="fas fa-ruler"></i> 62 ft</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 999<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Great value</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Majesty yacht for 1 hour - AED 999" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 5: Pavi -->
+                <div class="yacht-card" data-type="yacht" data-size="medium">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('pavi-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('pavi-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('pavi-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('pavi-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('pavi-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('pavi-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Palm Jumeirah</div>
+                        <h3>Pavi</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 35 Guests</span>
+                            <span><i class="fas fa-ruler"></i> 80 ft</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 1,699<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Perfect size</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Pavi yacht for 1 hour - AED 1,699" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 6: Conwy 8 -->
+                <div class="yacht-card" data-type="yacht" data-size="large">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('conwy8-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('conwy8-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('conwy8-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('conwy8-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('conwy8-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('conwy8-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
+                        <h3>Conwy 8</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 50 Guests</span>
+                            <span><i class="fas fa-ruler"></i> 88 ft</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 2,499<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Modern design</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Conwy 8 yacht for 1 hour - AED 2,499" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 7: Majesty 48 -->
+                <div class="yacht-card" data-type="yacht" data-size="small">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('majesty48-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty48-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty48-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty48-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty48-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty48-6.jpg');"></div>
+                    </div>
+                    <div class="yacht-info">
+                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
+                        <h3>Majesty 48</h3>
+                        <div class="yacht-features">
+                            <span><i class="fas fa-users"></i> 12 Guests</span>
+                            <span><i class="fas fa-ruler"></i> 48 ft</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                        </div>
+                        <div class="yacht-price">
+                            <div>
+                                <div class="price-tag">AED 649<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Most affordable</div>
+                            </div>
+                            <div class="enquiry-buttons">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Majesty 48 yacht for 1 hour - AED 649" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/boatdubai" class="btn-telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yacht 8: Majesty (another) -->
+                <div class="yacht-card" data-type="yacht" data-size="small">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('majesty-50-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-50-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-50-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-50-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-50-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('majesty-50-6.jpg');"></div>
+                    </div>
                     <div class="yacht-info">
                         <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
                         <h3>Majesty 50</h3>
                         <div class="yacht-features">
                             <span><i class="fas fa-users"></i> 13 Guests</span>
-                            <span><i class="fas fa-bed"></i> 2 Cabins</span>
                             <span><i class="fas fa-ruler"></i> 50 ft</span>
-                            <span><i class="fas fa-swimmer"></i> Swim Platform</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
                         </div>
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 700<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
+                                <div class="price-tag">AED 699<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Popular choice</div>
                             </div>
                             <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Majesty 50 yacht" class="btn-whatsapp">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Majesty 50 yacht for 1 hour - AED 699" class="btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram">
@@ -556,25 +886,31 @@
                     </div>
                 </div>
 
-                <!-- Yacht 2 -->
-                <div class="yacht-card" data-size="small">
-                    <img src="silvercraft40-1.jpg" alt="Silver Craft 40" class="yacht-image">
+                <!-- Yacht 9: Silver Craft -->
+                <div class="yacht-card" data-type="yacht" data-size="small">
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('silvercraft-1.jpg');"></div>
+                        <div class="slide" style="background-image: url('silvercraft-2.jpg');"></div>
+                        <div class="slide" style="background-image: url('silvercraft-3.jpg');"></div>
+                        <div class="slide" style="background-image: url('silvercraft-4.jpg');"></div>
+                        <div class="slide" style="background-image: url('silvercraft-5.jpg');"></div>
+                        <div class="slide" style="background-image: url('silvercraft-6.jpg');"></div>
+                    </div>
                     <div class="yacht-info">
                         <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
-                        <h3>Silver Craft 40</h3>
+                        <h3>Silver Craft</h3>
                         <div class="yacht-features">
                             <span><i class="fas fa-users"></i> 8 Guests</span>
-                            <span><i class="fas fa-bed"></i> 3 Cabins</span>
                             <span><i class="fas fa-ruler"></i> 40 ft</span>
-                            <span><i class="fas fa-sun"></i> Sun Deck</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
                         </div>
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 500<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
+                                <div class="price-tag">AED 499<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Intimate groups</div>
                             </div>
                             <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Silver Craft 40 yacht" class="btn-whatsapp">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Silver Craft yacht for 1 hour - AED 499" class="btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram">
@@ -585,228 +921,29 @@
                     </div>
                 </div>
 
-                <!-- Yacht 3 -->
-                <div class="yacht-card" data-size="large" data-type="luxury">
-                    <img src="sunseeker65-1.jpg" alt="Sunseeker 65" class="yacht-image">
+                <!-- Vessel 10: Pink Jet Car -->
+                <div class="yacht-card" data-type="jet" data-size="small">
+                    <div class="jet-badge">EXCLUSIVE</div>
+                    <div class="yacht-slideshow">
+                        <div class="slide" style="background-image: url('jetcar-pink-1.jpg'); background-color: #FFB6C1;"></div>
+                        <div class="slide" style="background-image: url('jetcar-pink-2.jpg'); background-color: #FFB6C1;"></div>
+                        <div class="slide" style="background-image: url('jetcar-pink-3.jpg'); background-color: #FFB6C1;"></div>
+                    </div>
                     <div class="yacht-info">
                         <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Palm Jumeirah</div>
-                        <h3>Sunseeker 65</h3>
+                        <h3 style="color: var(--pink);">Pink Jet Car</h3>
                         <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 25 Guests</span>
-                            <span><i class="fas fa-bed"></i> 4 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 65 ft</span>
-                            <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                            <span><i class="fas fa-bolt"></i> Jet Powered</span>
+                            <span><i class="fas fa-clock"></i> 1 Hour</span>
+                            <span><i class="fas fa-car"></i> 3-4 Guests</span>
                         </div>
                         <div class="yacht-price">
                             <div>
-                                <div class="price-tag">AED 1,250<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 3 hours</div>
+                                <div class="price-tag" style="color: var(--pink);">AED 1,549<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
+                                <div class="price-note">Unique experience</div>
                             </div>
                             <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Sunseeker 65 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 4 -->
-                <div class="yacht-card" data-size="medium">
-                    <img src="azimut55-1.jpg" alt="Azimut 55" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
-                        <h3>Azimut 55</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 15 Guests</span>
-                            <span><i class="fas fa-bed"></i> 3 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 55 ft</span>
-                            <span><i class="fas fa-tv"></i> Entertainment</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 900<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Azimut 55 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 5 -->
-                <div class="yacht-card" data-size="small">
-                    <img src="ferretti45-1.jpg" alt="Ferretti 45" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
-                        <h3>Ferretti 45</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 10 Guests</span>
-                            <span><i class="fas fa-bed"></i> 2 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 45 ft</span>
-                            <span><i class="fas fa-utensils"></i> BBQ</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 600<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Ferretti 45 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 6 -->
-                <div class="yacht-card" data-size="large" data-type="luxury">
-                    <img src="montefino72-1.jpg" alt="Monte Fino 72" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Palm Jumeirah</div>
-                        <h3>Monte Fino 72</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 20 Guests</span>
-                            <span><i class="fas fa-bed"></i> 5 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 72 ft</span>
-                            <span><i class="fas fa-water"></i> Water Slide</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 1,500<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 3 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Monte Fino 72 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 7 -->
-                <div class="yacht-card" data-size="medium">
-                    <img src="fairline52-1.jpg" alt="Fairline 52" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
-                        <h3>Fairline 52</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 12 Guests</span>
-                            <span><i class="fas fa-bed"></i> 3 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 52 ft</span>
-                            <span><i class="fas fa-fish"></i> Fishing Gear</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 800<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Fairline 52 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 8 -->
-                <div class="yacht-card" data-size="small">
-                    <img src="jeanneau35-1.jpg" alt="Jeanneau 35" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
-                        <h3>Jeanneau 35</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 6 Guests</span>
-                            <span><i class="fas fa-bed"></i> 1 Cabin</span>
-                            <span><i class="fas fa-ruler"></i> 35 ft</span>
-                            <span><i class="fas fa-music"></i> Sound System</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 400<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Jeanneau 35 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 9 -->
-                <div class="yacht-card" data-size="large" data-type="luxury">
-                    <img src="princess68-1.jpg" alt="Princess 68" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Palm Jumeirah</div>
-                        <h3>Princess 68</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 18 Guests</span>
-                            <span><i class="fas fa-bed"></i> 4 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 68 ft</span>
-                            <span><i class="fas fa-glass-cheers"></i> Bar</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 1,100<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 3 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Princess 68 yacht" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="https://t.me/boatdubai" class="btn-telegram">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yacht 10 -->
-                <div class="yacht-card" data-size="medium">
-                    <img src="lagoon50-1.jpg" alt="Lagoon 50" class="yacht-image">
-                    <div class="yacht-info">
-                        <div class="yacht-location"><i class="fas fa-map-marker-alt"></i> Dubai Marina</div>
-                        <h3>Lagoon 50 Catamaran</h3>
-                        <div class="yacht-features">
-                            <span><i class="fas fa-users"></i> 14 Guests</span>
-                            <span><i class="fas fa-bed"></i> 4 Cabins</span>
-                            <span><i class="fas fa-ruler"></i> 50 ft</span>
-                            <span><i class="fas fa-ship"></i> Catamaran</span>
-                        </div>
-                        <div class="yacht-price">
-                            <div>
-                                <div class="price-tag">AED 850<span style="font-size:1rem; font-weight:normal;">/hour</span></div>
-                                <div class="price-note">Min. 2 hours</div>
-                            </div>
-                            <div class="enquiry-buttons">
-                                <a href="https://wa.me/971527872669?text=Hi! I'm interested in Lagoon 50 yacht" class="btn-whatsapp">
+                                <a href="https://wa.me/971527872669?text=Hi! I want to book Pink Jet Car for 1 hour - AED 1,549" class="btn-whatsapp" style="background: var(--pink);">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
                                 <a href="https://t.me/boatdubai" class="btn-telegram">
@@ -824,82 +961,45 @@
     <section class="routes-section" id="routes">
         <div class="container">
             <div class="section-title">
-                <h2 style="color: white;">Popular Routes & Pricing</h2>
-                <p style="color: rgba(255,255,255,0.8);">Explore Dubai's coastline with our curated routes</p>
+                <h2 style="color: white;">Standard Routes (1 Hour)</h2>
+                <p style="color: rgba(255,255,255,0.8);">All yachts available for 1-hour minimum booking</p>
             </div>
             <div class="routes-grid">
                 <div class="route-card">
                     <div class="route-header">
-                        <div class="route-duration">1 HOUR</div>
-                        <div><i class="fas fa-clock"></i></div>
+                        <div class="route-duration">ROUTE 1</div>
+                        <div><i class="fas fa-map"></i></div>
                     </div>
-                    <div class="route-price">From AED 400</div>
+                    <div class="route-price">All Yachts</div>
                     <ul class="route-checkpoints">
                         <li>Dubai Marina Tour</li>
-                        <li>JBR Walk View</li>
+                        <li>JBR Walk Views</li>
                         <li>Dubai Eye (Ain Dubai)</li>
                     </ul>
                 </div>
                 <div class="route-card">
                     <div class="route-header">
-                        <div class="route-duration">2 HOURS</div>
+                        <div class="route-duration">ROUTE 2</div>
                         <div><i class="fas fa-sun"></i></div>
                     </div>
-                    <div class="route-price">From AED 750</div>
+                    <div class="route-price">All Yachts</div>
                     <ul class="route-checkpoints">
-                        <li>Dubai Marina</li>
                         <li>Palm Jumeirah</li>
-                        <li>Burj Al Arab Photo Stop</li>
+                        <li>Burj Al Arab View</li>
+                        <li>Coastal Cruise</li>
                     </ul>
                 </div>
                 <div class="route-card">
                     <div class="route-header">
-                        <div class="route-duration">3 HOURS</div>
-                        <div><i class="fas fa-crown"></i></div>
+                        <div class="route-duration">CUSTOM</div>
+                        <div><i class="fas fa-star"></i></div>
                     </div>
-                    <div class="route-price">From AED 1,100</div>
+                    <div class="route-price">Customizable</div>
                     <ul class="route-checkpoints">
-                        <li>Dubai Marina</li>
-                        <li>Palm Jumeirah</li>
-                        <li>Burj Al Arab</li>
-                        <li>Atlantis The Palm</li>
+                        <li>Choose Your Route</li>
+                        <li>Extended Hours Available</li>
+                        <li>Special Requests Welcome</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SPECIAL OFFERS ========== -->
-    <section class="section offers-section" id="offers">
-        <div class="container">
-            <div class="section-title">
-                <h2>Special Packages</h2>
-                <p>Exclusive offers for unforgettable experiences</p>
-            </div>
-            <div class="offers-grid">
-                <div class="offer-card">
-                    <div class="offer-badge">MOST POPULAR</div>
-                    <img src="sunset-cruise.jpg" alt="Sunset Cruise" class="offer-image">
-                    <div class="offer-content">
-                        <h3>Golden Hour Sunset Cruise</h3>
-                        <p>Experience Dubai's magical sunset from the water</p>
-                    </div>
-                </div>
-                <div class="offer-card">
-                    <div class="offer-badge">ROMANTIC</div>
-                    <img src="romantic-dinner.jpg" alt="Romantic Dinner" class="offer-image">
-                    <div class="offer-content">
-                        <h3>Private Romantic Dinner</h3>
-                        <p>Intimate dinner for two with personal chef</p>
-                    </div>
-                </div>
-                <div class="offer-card">
-                    <div class="offer-badge">CORPORATE</div>
-                    <img src="corporate-event.jpg" alt="Corporate Event" class="offer-image">
-                    <div class="offer-content">
-                        <h3>Corporate Events</h3>
-                        <p>Business meetings & team building on water</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -910,16 +1010,25 @@
         <div class="container">
             <div class="section-title">
                 <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions</p>
+                <p>Common questions about our 10 vessels</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How do I book a yacht?</span>
+                        <span>What is the minimum booking duration?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>You can book through WhatsApp, Telegram, or our contact form. We recommend contacting us at least 48 hours in advance.</p>
+                        <p>All yachts and the jet car have a minimum booking duration of 1 hour. You can book additional hours at the same hourly rate.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is the jet car suitable for children?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The pink jet car is suitable for adults and children above 8 years old. Life jackets are provided for all passengers.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -928,16 +1037,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We accept cash, credit cards, and bank transfer. A deposit is required to confirm booking.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can we bring our own food?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, you can bring your own food and non-alcoholic beverages. Catering services are also available.</p>
+                        <p>We accept cash, credit cards, and bank transfer. A 50% deposit is required to confirm your booking.</p>
                     </div>
                 </div>
             </div>
@@ -948,8 +1048,8 @@
     <section class="section" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch to book your perfect yacht</p>
+                <h2>Contact & Booking</h2>
+                <p>Book your yacht or jet car instantly</p>
             </div>
             <div class="contact-form-container">
                 <form id="enquiryForm">
@@ -962,36 +1062,31 @@
                         <input type="tel" id="phone" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="yacht">Select Yacht *</label>
+                        <label for="yacht">Select Vessel *</label>
                         <select id="yacht" class="form-control" required>
-                            <option value="">Choose a yacht</option>
-                            <option value="Majesty 50">Majesty 50</option>
-                            <option value="Silver Craft 40">Silver Craft 40</option>
-                            <option value="Sunseeker 65">Sunseeker 65</option>
-                            <option value="Azimut 55">Azimut 55</option>
-                            <option value="Ferretti 45">Ferretti 45</option>
-                            <option value="Monte Fino 72">Monte Fino 72</option>
-                            <option value="Fairline 52">Fairline 52</option>
-                            <option value="Jeanneau 35">Jeanneau 35</option>
-                            <option value="Princess 68">Princess 68</option>
-                            <option value="Lagoon 50">Lagoon 50</option>
+                            <option value="">Choose a vessel</option>
+                            <option value="Black Pearl">Black Pearl (50 guests) - AED 1,999/hour</option>
+                            <option value="Carmen">Carmen (30 guests) - AED 2,999/hour</option>
+                            <option value="Deemas">Deemas (110 guests) - AED 4,499/hour</option>
+                            <option value="Majesty">Majesty (20 guests) - AED 999/hour</option>
+                            <option value="Pavi">Pavi (35 guests) - AED 1,699/hour</option>
+                            <option value="Conwy 8">Conwy 8 (50 guests) - AED 2,499/hour</option>
+                            <option value="Majesty 48">Majesty 48 (12 guests) - AED 649/hour</option>
+                            <option value="Majesty 50">Majesty 50 (13 guests) - AED 699/hour</option>
+                            <option value="Silver Craft">Silver Craft (8 guests) - AED 499/hour</option>
+                            <option value="Pink Jet Car">Pink Jet Car (3-4 guests) - AED 1,549/hour</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="duration">Duration *</label>
-                        <select id="duration" class="form-control" required>
-                            <option value="">Select hours</option>
-                            <option value="1 hour">1 Hour</option>
-                            <option value="2 hours">2 Hours</option>
-                            <option value="3 hours">3 Hours</option>
-                            <option value="4+ hours">4+ Hours</option>
-                        </select>
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" class="form-control" required>
                     </div>
-                    <button type="submit" class="cta-button" style="width: 100%;">Send Booking Request</button>
+                    <button type="submit" class="cta-button" style="width: 100%; background: var(--pink); border: none;">Send Booking Request</button>
                 </form>
-                <div style="text-align: center; margin-top: 30px;">
-                    <p><strong>Direct Contact:</strong> +971 52 787 2669</p>
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f8f8f8; border-radius: 10px;">
+                    <p><strong>Instant Booking:</strong> +971 52 787 2669 (WhatsApp/Telegram)</p>
                     <p>bookinghubdubai@gmail.com</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">We respond within 5 minutes!</p>
                 </div>
             </div>
         </div>
@@ -1002,7 +1097,7 @@
         <div class="footer-grid">
             <div class="footer-column">
                 <h3>Ocean Charters Dubai</h3>
-                <p>Dubai's largest luxury yacht fleet with 10 premium yachts for rent. Unforgettable experiences on water.</p>
+                <p>10 luxury vessels - 9 yachts + 1 exclusive pink jet car. Unforgettable Dubai experiences on water.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -1016,21 +1111,21 @@
                 <p><i class="fas fa-map-marker-alt"></i> Dubai Marina, UAE</p>
             </div>
             <div class="footer-column">
-                <h3>Quick Links</h3>
-                <p><a href="#yachts">10 Yachts</a></p>
-                <p><a href="#routes">Routes & Pricing</a></p>
-                <p><a href="#offers">Special Offers</a></p>
-                <p><a href="#faq">FAQ</a></p>
+                <h3>Our Fleet</h3>
+                <p>9 Luxury Yachts</p>
+                <p>1 Pink Jet Car</p>
+                <p>Capacity: 8-110 guests</p>
+                <p>Prices: AED 499 - 4,499/hour</p>
             </div>
             <div class="footer-column">
                 <h3>Operating Hours</h3>
-                <p>Daily: 9:00 AM - 10:00 PM</p>
+                <p>Daily: 8:00 AM - 11:00 PM</p>
                 <p>24/7 WhatsApp Booking</p>
-                <p>Same Day Booking Available</p>
+                <p>Same Day Available</p>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; <span id="currentYear"></span> Ocean Charters Dubai. All rights reserved.</p>
+            <p>&copy; <span id="currentYear"></span> Ocean Charters Dubai. 10 luxury vessels. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1056,17 +1151,19 @@
                 const yachts = document.querySelectorAll('.yacht-card');
                 
                 yachts.forEach(yacht => {
+                    const type = yacht.getAttribute('data-type');
+                    const size = yacht.getAttribute('data-size');
+                    
                     if (filter === 'all') {
                         yacht.style.display = 'block';
-                    } else {
-                        const size = yacht.getAttribute('data-size');
-                        const type = yacht.getAttribute('data-type');
-                        
-                        if (filter === size || filter === type) {
-                            yacht.style.display = 'block';
-                        } else {
-                            yacht.style.display = 'none';
-                        }
+                    } else if (filter === 'yacht') {
+                        yacht.style.display = type === 'yacht' ? 'block' : 'none';
+                    } else if (filter === 'jet') {
+                        yacht.style.display = type === 'jet' ? 'block' : 'none';
+                    } else if (filter === 'large') {
+                        yacht.style.display = size === 'large' ? 'block' : 'none';
+                    } else if (filter === 'small') {
+                        yacht.style.display = size === 'small' ? 'block' : 'none';
                     }
                 });
             });
@@ -1076,11 +1173,12 @@
         document.getElementById('enquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const yacht = document.getElementById('yacht').value;
-            const duration = document.getElementById('duration').value;
+            const date = document.getElementById('date').value;
             const phone = document.getElementById('phone').value;
+            const name = document.getElementById('name').value;
             
             // Create WhatsApp message
-            const message = `Hello! I would like to book the ${yacht} for ${duration}. My phone number is ${phone}.`;
+            const message = `Hello! I would like to book: ${yacht} on ${date}. My name is ${name} and phone number is ${phone}.`;
             const whatsappUrl = `https://wa.me/971527872669?text=${encodeURIComponent(message)}`;
             
             // Redirect to WhatsApp
@@ -1088,7 +1186,21 @@
             
             // Reset form
             this.reset();
+            
+            // Set minimum date to tomorrow
+            const dateInput = document.getElementById('date');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
         });
+
+        // Set minimum date to tomorrow
+        const dateInput = document.getElementById('date');
+        if(dateInput) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        }
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1110,6 +1222,13 @@
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
                 item.classList.toggle('active');
             });
         });
@@ -1121,6 +1240,17 @@
             if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
                 navLinks.classList.remove('active');
             }
+        });
+
+        // Start slideshows
+        window.addEventListener('load', function() {
+            const slideshows = document.querySelectorAll('.yacht-slideshow');
+            slideshows.forEach(slideshow => {
+                const slides = slideshow.querySelectorAll('.slide');
+                slides.forEach(slide => {
+                    slide.style.animationPlayState = 'running';
+                });
+            });
         });
     </script>
 </body>
